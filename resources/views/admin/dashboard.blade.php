@@ -35,30 +35,79 @@
     </div>
 
     <!-- Menu -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
 
         <!-- Category -->
         <a
             href="{{ route('admin.categories.index') }}"
-            class="block p-6 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition"
+            class=" p-6 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition flex items-center"
         >
-            📂 Category
+            <span class="text-2xl mr-3">📂</span>
+            <div>
+                <h3 class="font-bold">Kategori</h3>
+                <p class="text-sm text-gray-300 mt-1">Kelola kategori produk</p>
+            </div>
         </a>
 
-        <!-- Product (nanti nyambung) -->
+        <!-- Product -->
         <a
             href="{{ route('admin.products.index') }}"
-            class="block p-6 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition"
+            class=" p-6 bg-blue-800 text-white rounded-lg hover:bg-blue-700 transition flex items-center"
         >
-            📦 Product
-        </a>
-<a
-            href="{{ route('admin.addres.index') }}"
-            class="block p-6 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition"
-        >
-            📦 alamat
+            <span class="text-2xl mr-3">📦</span>
+            <div>
+                <h3 class="font-bold">Produk</h3>
+                <p class="text-sm text-gray-300 mt-1">Kelola produk & varian</p>
+            </div>
         </a>
 
+        <!-- Address -->
+        <a
+            href="{{ route('admin.addresses.index') }}"
+            class=" p-6 bg-green-800 text-white rounded-lg hover:bg-green-700 transition flex items-center"
+        >
+            <span class="text-2xl mr-3">📍</span>
+            <div>
+                <h3 class="font-bold">Alamat</h3>
+                <p class="text-sm text-gray-300 mt-1">Kelalamat pengiriman</p>
+            </div>
+        </a>
+
+    </div>
+
+    <!-- Statistics -->
+    <div class="mt-10 pt-6 border-t border-gray-200">
+        <h2 class="text-lg font-semibold text-gray-800 mb-4">Ringkasan</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="bg-blue-50 p-4 rounded-lg">
+                <p class="text-sm text-gray-600">Total Kategori</p>
+                <p class="text-2xl font-bold text-blue-700">{{ \App\Models\Category::count() ?? 0 }}</p>
+            </div>
+            <div class="bg-green-50 p-4 rounded-lg">
+                <p class="text-sm text-gray-600">Total Produk</p>
+                <p class="text-2xl font-bold text-green-700">{{ \App\Models\Product::count() ?? 0 }}</p>
+            </div>
+            <div class="bg-purple-50 p-4 rounded-lg">
+                <p class="text-sm text-gray-600">Alamat Tersedia</p>
+                <p class="text-2xl font-bold text-purple-700">{{ \App\Models\Address::count() ?? 0 }}</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="mt-8 pt-6 border-t border-gray-200">
+        <h2 class="text-lg font-semibold text-gray-800 mb-4">Aksi Cepat</h2>
+        <div class="flex flex-wrap gap-3">
+            <a href="{{ route('admin.products.create') }}" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md text-sm transition">
+                + Tambah Produk
+            </a>
+            <a href="{{ route('admin.categories.create') }}" class="bg-gray-700 hover:bg-gray-800 text-white px-4 py-2 rounded-md text-sm transition">
+                + Tambah Kategori
+            </a>
+            <a href="{{ route('admin.addresses.create') }}" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-md text-sm transition">
+                + Tambah Alamat
+            </a>
+        </div>
     </div>
 
 </div>
