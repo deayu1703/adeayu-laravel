@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register | Ayyra Stationery - Premium & Aesthetic Tools</title>
+    <title>Register | Ayyra Stationery</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌸</text></svg>">
@@ -35,12 +35,10 @@
                         peach: '#FFECB3',
                         cream: '#FFF8E1',
                         accent: '#4A148C',
-                        success: '#10B981',
                     },
                     animation: {
                         'fade-in': 'fadeIn 0.8s ease-in-out',
                         'slide-up': 'slideUp 0.6s ease-out',
-                        'pulse-slow': 'pulse 3s ease-in-out infinite',
                     },
                     keyframes: {
                         fadeIn: {
@@ -72,6 +70,25 @@
             box-shadow: 0 8px 20px rgba(233, 30, 99, 0.3);
         }
 
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #E91E63;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
         .input-field {
             transition: all 0.3s ease;
         }
@@ -89,51 +106,32 @@
             50% { transform: translateY(-15px) rotate(5deg); }
             100% { transform: translateY(0px) rotate(0deg); }
         }
-
-        .password-strength {
-            transition: all 0.3s ease;
-        }
-
-        .progress-bar {
-            transition: width 0.5s ease;
-        }
     </style>
 </head>
 
-<body class="font-body min-h-screen gradient-bg flex flex-col">
+<body class="font-body text-gray-800 gradient-bg min-h-screen">
 
-<!-- 🌸 HEADER / NAVBAR -->
-<header class="sticky top-0 z-40 bg-white/90 backdrop-blur-sm shadow-sm">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
-
+<!-- HEADER / NAVBAR - Konsisten dengan halaman lain -->
+<header class="sticky top-0 z-50 bg-white shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
         <!-- Logo -->
         <div class="flex items-center space-x-3">
             <a href="{{ route('welcome') }}" class="flex items-center space-x-3">
                 <div class="w-10 h-10 rounded-full bg-gradient-to-r from-pinky to-pinklight flex items-center justify-center">
                     <span class="text-white text-lg">🌸</span>
                 </div>
-                <div>
-                    <h1 class="font-script text-2xl text-pinky leading-tight">
-                        Ayyra Stationery
-                    </h1>
-                    <p class="text-xs text-gray-500">Premium & Aesthetic Tools</p>
-                </div>
+                <h1 class="font-script text-2xl text-pinky leading-tight">
+                    Ayyra Stationery
+                </h1>
             </a>
         </div>
 
         <!-- Desktop Menu -->
         <nav class="hidden md:flex items-center space-x-8">
-            <a href="{{ route('welcome') }}" class="font-medium text-gray-700 hover:text-pinky transition">Beranda</a>
-            <a href="#" class="font-medium text-gray-700 hover:text-pinky transition">Produk</a>
-            <a href="#" class="font-medium text-gray-700 hover:text-pinky transition">Koleksi</a>
-            <a href="#" class="font-medium text-gray-700 hover:text-pinky transition">Tentang</a>
-
-            <div class="ml-4">
-                <a href="{{ route('login') }}"
-                   class="px-5 py-2.5 rounded-full border border-pinky text-pinky font-semibold hover:bg-pinky hover:text-white transition duration-300">
-                    Masuk
-                </a>
-            </div>
+            <a href="{{ route('welcome') }}" class="nav-link font-medium text-gray-700 hover:text-pinky">HOME</a>
+            <a href="#" class="nav-link font-medium text-gray-700 hover:text-pinky">QUESTION</a>
+            <a href="#" class="nav-link font-medium text-gray-700 hover:text-pinky">SHOP</a>
+            <a href="#" class="nav-link font-medium text-gray-700 hover:text-pinky">CONTACT US</a>
         </nav>
 
         <!-- Mobile Menu Button -->
@@ -141,394 +139,341 @@
             <i class="fas fa-bars text-xl"></i>
         </button>
     </div>
-
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg px-6 py-4">
-        <div class="flex flex-col space-y-4">
-            <a href="{{ route('welcome') }}" class="font-medium text-gray-700 hover:text-pinky py-2 border-b">Beranda</a>
-            <a href="#" class="font-medium text-gray-700 hover:text-pinky py-2 border-b">Produk</a>
-            <a href="#" class="font-medium text-gray-700 hover:text-pinky py-2 border-b">Koleksi</a>
-            <a href="#" class="font-medium text-gray-700 hover:text-pinky py-2 border-b">Tentang</a>
-            <a href="{{ route('login') }}" class="font-medium text-gray-700 hover:text-pinky py-2 border-b">Masuk</a>
-        </div>
-    </div>
 </header>
 
-<!-- Main Content -->
-<main class="flex-1 flex items-center justify-center px-4 py-8">
+<main class="flex-1 py-8">
+    <!-- HERO SECTION - Struktur dua kolom seperti login -->
+    <section class="py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
-    <!-- Floating Elements -->
-    <div class="floating-element absolute top-12 left-12 text-4xl text-pinky/20">🌸</div>
-    <div class="floating-element absolute top-24 right-20 text-4xl text-blue-300/20" style="animation-delay: 0.5s;">🫧</div>
-    <div class="floating-element absolute bottom-20 left-16 text-4xl text-pink-300/20" style="animation-delay: 1s;">🦋</div>
-    <div class="floating-element absolute bottom-10 right-12 text-4xl text-amber-300/20" style="animation-delay: 1.5s;">🎀</div>
+                <!-- Left Column - Branding & Benefits -->
+                <div class="animate-fade-in">
+                    <!-- Brand Header -->
+                    <div class="flex items-center space-x-4 mb-8">
+                        <div class="w-16 h-16 rounded-full bg-gradient-to-r from-pinky to-pinklight flex items-center justify-center">
+                            <span class="text-white text-2xl">🌸</span>
+                        </div>
+                        <div>
+                            <h1 class="font-script text-3xl text-pinky">Ayyra Stationery</h1>
+                            <p class="text-gray-600">Premium & Aesthetic Tools</p>
+                        </div>
+                    </div>
 
-    <div class="w-full max-w-6xl mx-auto">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <h2 class="font-display text-4xl md:text-5xl text-gray-800 mb-6 leading-tight">
+                        Join Our <span class="text-pinky">Creative Community</span>
+                    </h2>
 
-            <!-- Left Column - Benefits & Illustration -->
-            <div class="hidden lg:block animate-fade-in">
-                <div class="bg-white rounded-3xl shadow-2xl p-10 relative overflow-hidden">
-                    <!-- Decorative background -->
-                    <div class="absolute -top-20 -left-20 w-64 h-64 rounded-full bg-gradient-to-r from-blush/30 to-lavender/30"></div>
-                    <div class="absolute -bottom-20 -right-20 w-64 h-64 rounded-full bg-gradient-to-r from-peach/30 to-babyblue/30"></div>
+                    <p class="text-lg text-gray-600 mb-8 max-w-xl">
+                        Create your account to unlock exclusive benefits and access our premium stationery collection.
+                        Where creativity meets quality.
+                    </p>
 
-                    <div class="relative z-10">
-                        <!-- Welcome Header -->
-                        <div class="flex items-center justify-center mb-8">
-                            <div class="w-20 h-20 rounded-full bg-gradient-to-r from-success to-emerald-400 flex items-center justify-center shadow-lg animate-pulse-slow">
-                                <i class="fas fa-crown text-white text-3xl"></i>
+                    <!-- Membership Benefits -->
+                    <div class="space-y-6 mb-10">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 rounded-full bg-blush flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-gift text-pinky text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 text-lg mb-1">Welcome Gift</h4>
+                                <p class="text-gray-600">Get 15% off your first order as a new member</p>
                             </div>
                         </div>
 
-                        <h2 class="font-display text-3xl text-center text-gray-800 mb-6">
-                            Bergabunglah dengan <span class="text-pinky">Komunitas Kreatif</span>
-                        </h2>
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 rounded-full bg-lavender flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-star text-blue-500 text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 text-lg mb-1">Exclusive Access</h4>
+                                <p class="text-gray-600">Early access to new collections and limited editions</p>
+                            </div>
+                        </div>
 
-                        <p class="text-gray-600 text-center mb-10 leading-relaxed">
-                            Daftarkan diri Anda sekarang dan nikmati berbagai keuntungan eksklusif sebagai member Ayyra Stationery.
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 rounded-full bg-peach flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-shipping-fast text-amber-500 text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 text-lg mb-1">Free Shipping</h4>
+                                <p class="text-gray-600">Enjoy free shipping on all orders over Rp 300.000</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial -->
+                    <div class="bg-cream rounded-2xl p-6 border-l-4 border-pinky">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-gradient-to-r from-blue-400 to-blue-600 flex items-center justify-center text-white font-bold mr-4">
+                                A
+                            </div>
+                            <div>
+                                <h5 class="font-semibold">Andi Pratama</h5>
+                                <p class="text-sm text-gray-500">Content Creator & Member since 2023</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 italic">
+                            "Joining Ayyra Stationery was the best decision for my creative work. The member benefits and quality products are unmatched!"
                         </p>
-
-                        <!-- Membership Benefits -->
-                        <div class="space-y-6 mb-10">
-                            <div class="flex items-start bg-gradient-to-r from-blush/30 to-transparent p-4 rounded-2xl">
-                                <div class="w-12 h-12 rounded-full bg-gradient-to-r from-pinky to-pinklight flex items-center justify-center mr-4 flex-shrink-0">
-                                    <i class="fas fa-percentage text-white"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold text-gray-800">Diskon Member 20%</h4>
-                                    <p class="text-gray-600 text-sm">Diskin khusus untuk semua produk premium</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start bg-gradient-to-r from-lavender/30 to-transparent p-4 rounded-2xl">
-                                <div class="w-12 h-12 rounded-full bg-gradient-to-r from-blue-500 to-blue-400 flex items-center justify-center mr-4 flex-shrink-0">
-                                    <i class="fas fa-shipping-fast text-white"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold text-gray-800">Gratis Ongkir</h4>
-                                    <p class="text-gray-600 text-sm">Minimal belanja Rp 300.000 untuk seluruh Indonesia</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start bg-gradient-to-r from-peach/30 to-transparent p-4 rounded-2xl">
-                                <div class="w-12 h-12 rounded-full bg-gradient-to-r from-amber-500 to-amber-400 flex items-center justify-center mr-4 flex-shrink-0">
-                                    <i class="fas fa-gift text-white"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold text-gray-800">Birthday Gift</h4>
-                                    <p class="text-gray-600 text-sm">Hadiah spesial di hari ulang tahun Anda</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start bg-gradient-to-r from-babyblue/30 to-transparent p-4 rounded-2xl">
-                                <div class="w-12 h-12 rounded-full bg-gradient-to-r from-cyan-500 to-cyan-400 flex items-center justify-center mr-4 flex-shrink-0">
-                                    <i class="fas fa-star text-white"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold text-gray-800">Point Rewards</h4>
-                                    <p class="text-gray-600 text-sm">Kumpulkan poin dan tukarkan dengan produk eksklusif</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Stats -->
-                        <div class="grid grid-cols-2 gap-4 text-center">
-                            <div class="bg-cream p-4 rounded-2xl">
-                                <p class="text-2xl font-bold text-pinky">2.5K+</p>
-                                <p class="text-sm text-gray-600">Member Aktif</p>
-                            </div>
-                            <div class="bg-cream p-4 rounded-2xl">
-                                <p class="text-2xl font-bold text-pinky">4.8★</p>
-                                <p class="text-sm text-gray-600">Rating Member</p>
-                            </div>
+                        <div class="flex text-amber-400 mt-3">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Right Column - Registration Form -->
-            <div class="animate-slide-up">
-                <div class="bg-white/95 backdrop-blur-sm rounded-3xl shadow-2xl p-10 md:p-12 border border-gray-100">
+                <!-- Right Column - Registration Form -->
+                <div class="animate-slide-up">
+                    <div class="bg-white rounded-3xl shadow-2xl p-10 border border-gray-100">
+                        <!-- Form Header -->
+                        <div class="text-center mb-10">
+                            <div class="inline-block p-4 rounded-2xl bg-blush/30 mb-6">
+                                <i class="fas fa-user-plus text-3xl text-pinky"></i>
+                            </div>
 
-                    <!-- Brand Header -->
-                    <div class="text-center mb-10">
-                        <div class="inline-block p-4 rounded-2xl bg-gradient-to-r from-pinky/10 to-pinklight/10 mb-6">
-                            <i class="fas fa-user-plus text-3xl text-pinky"></i>
+                            <h2 class="font-display text-3xl text-gray-800 mb-3">
+                                Create Your <span class="text-pinky">Account</span>
+                            </h2>
+
+                            <p class="text-gray-600">
+                                Join our creative community in just a few steps
+                            </p>
                         </div>
 
-                        <h2 class="font-display text-3xl text-gray-800 mb-3">
-                            Buat <span class="text-pinky">Akun Baru</span>
-                        </h2>
-
-                        <p class="text-gray-600">
-                            Bergabunglah sekarang dan nikmati berbagai keuntungan
-                        </p>
-                    </div>
-
-                    <!-- Error Messages -->
-                    @if ($errors->any())
-                    <div class="mb-6 p-4 rounded-xl bg-red-50 border border-red-200">
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0">
-                                <i class="fas fa-exclamation-circle text-red-500 mt-0.5"></i>
-                            </div>
-                            <div class="ml-3">
-                                <h3 class="text-sm font-medium text-red-800">
-                                    Terdapat kesalahan dalam pengisian form
-                                </h3>
-                                <div class="mt-2 text-sm text-red-700">
-                                    <ul class="list-disc pl-5 space-y-1">
-                                        @foreach ($errors->all() as $error)
-                                            <li>{{ $error }}</li>
-                                        @endforeach
-                                    </ul>
+                        <!-- Error Messages -->
+                        @if ($errors->any())
+                        <div class="mb-6 p-4 rounded-xl bg-red-50 border border-red-200">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-exclamation-circle text-red-500 mt-0.5"></i>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    @endif
-
-                    <!-- Registration Form -->
-                    <form method="POST" action="{{ route('register') }}" class="space-y-6" id="registerForm">
-                        @csrf
-
-                        <!-- Name Field -->
-                        <div>
-                            <label for="name" class="block text-sm font-medium text-gray-700 mb-2">
-                                <i class="fas fa-user mr-2 text-pinky"></i>Nama Lengkap
-                            </label>
-                            <div class="relative">
-                                <input
-                                    type="text"
-                                    name="name"
-                                    id="name"
-                                    value="{{ old('name') }}"
-                                    required
-                                    autocomplete="name"
-                                    autofocus
-                                    placeholder="Masukkan nama lengkap Anda"
-                                    class="w-full px-5 py-4 pl-12 rounded-xl border border-gray-300 input-field focus:border-pinky focus:outline-none"
-                                >
-                                <div class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400">
-                                    <i class="fas fa-id-card"></i>
-                                </div>
-                            </div>
-                            <p class="text-xs text-gray-500 mt-2">Gunakan nama asli untuk memudahkan verifikasi</p>
-                        </div>
-
-                        <!-- Email Field -->
-                        <div>
-                            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
-                                <i class="fas fa-envelope mr-2 text-pinky"></i>Alamat Email
-                            </label>
-                            <div class="relative">
-                                <input
-                                    type="email"
-                                    name="email"
-                                    id="email"
-                                    value="{{ old('email') }}"
-                                    required
-                                    autocomplete="email"
-                                    placeholder="nama@email.com"
-                                    class="w-full px-5 py-4 pl-12 rounded-xl border border-gray-300 input-field focus:border-pinky focus:outline-none"
-                                >
-                                <div class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400">
-                                    <i class="fas fa-at"></i>
-                                </div>
-                            </div>
-                            <p class="text-xs text-gray-500 mt-2">Kami tidak akan membagikan email Anda ke pihak lain</p>
-                        </div>
-
-                        <!-- Password Field -->
-                        <div>
-                            <label for="password" class="block text-sm font-medium text-gray-700 mb-2">
-                                <i class="fas fa-lock mr-2 text-pinky"></i>Password
-                            </label>
-                            <div class="relative">
-                                <input
-                                    type="password"
-                                    name="password"
-                                    id="password"
-                                    required
-                                    autocomplete="new-password"
-                                    placeholder="Buat password yang kuat"
-                                    class="w-full px-5 py-4 pl-12 rounded-xl border border-gray-300 input-field focus:border-pinky focus:outline-none"
-                                >
-                                <div class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400">
-                                    <i class="fas fa-key"></i>
-                                </div>
-                                <button type="button" id="togglePassword" class="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-pinky">
-                                    <i class="fas fa-eye"></i>
-                                </button>
-                            </div>
-
-                            <!-- Password Strength Indicator -->
-                            <div class="mt-3">
-                                <div class="flex justify-between mb-1">
-                                    <span class="text-xs font-medium text-gray-700">Kekuatan Password</span>
-                                    <span id="passwordStrengthText" class="text-xs font-medium text-gray-500">Lemah</span>
-                                </div>
-                                <div class="w-full bg-gray-200 rounded-full h-2">
-                                    <div id="passwordStrengthBar" class="h-2 rounded-full progress-bar" style="width: 0%; background-color: #ef4444;"></div>
-                                </div>
-                                <div id="passwordRequirements" class="mt-2 grid grid-cols-2 gap-1">
-                                    <div class="flex items-center">
-                                        <i class="fas fa-circle text-xs text-gray-300 mr-2 requirement-icon" id="reqLength"></i>
-                                        <span class="text-xs text-gray-600">Minimal 8 karakter</span>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <i class="fas fa-circle text-xs text-gray-300 mr-2 requirement-icon" id="reqUppercase"></i>
-                                        <span class="text-xs text-gray-600">Huruf besar</span>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <i class="fas fa-circle text-xs text-gray-300 mr-2 requirement-icon" id="reqLowercase"></i>
-                                        <span class="text-xs text-gray-600">Huruf kecil</span>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <i class="fas fa-circle text-xs text-gray-300 mr-2 requirement-icon" id="reqNumber"></i>
-                                        <span class="text-xs text-gray-600">Angka</span>
+                                <div class="ml-3">
+                                    <h3 class="text-sm font-medium text-red-800">
+                                        Registration Error
+                                    </h3>
+                                    <div class="mt-2 text-sm text-red-700">
+                                        <ul class="list-disc pl-5 space-y-1">
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        @endif
 
-                        <!-- Confirm Password Field -->
-                        <div>
-                            <label for="password_confirmation" class="block text-sm font-medium text-gray-700 mb-2">
-                                <i class="fas fa-lock mr-2 text-pinky"></i>Konfirmasi Password
-                            </label>
-                            <div class="relative">
-                                <input
-                                    type="password"
-                                    name="password_confirmation"
-                                    id="password_confirmation"
-                                    required
-                                    autocomplete="new-password"
-                                    placeholder="Ketik ulang password Anda"
-                                    class="w-full px-5 py-4 pl-12 rounded-xl border border-gray-300 input-field focus:border-pinky focus:outline-none"
-                                >
-                                <div class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400">
-                                    <i class="fas fa-key"></i>
+                        <!-- Registration Form -->
+                        <form method="POST" action="{{ route('register') }}" class="space-y-6">
+                            @csrf
+
+                            <!-- Full Name -->
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-2">
+                                    <i class="fas fa-user mr-2 text-pinky"></i>Full Name
+                                </label>
+                                <div class="relative">
+                                    <input
+                                        type="text"
+                                        name="name"
+                                        id="name"
+                                        value="{{ old('name') }}"
+                                        required
+                                        autocomplete="name"
+                                        autofocus
+                                        placeholder="Enter your full name"
+                                        class="w-full px-5 py-4 pl-12 rounded-xl border border-gray-300 input-field focus:border-pinky focus:outline-none"
+                                    >
+                                    <div class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400">
+                                        <i class="fas fa-user-circle"></i>
+                                    </div>
                                 </div>
-                                <button type="button" id="toggleConfirmPassword" class="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-pinky">
-                                    <i class="fas fa-eye"></i>
-                                </button>
                             </div>
-                            <div id="passwordMatch" class="hidden mt-2">
-                                <p class="text-xs text-success flex items-center">
-                                    <i class="fas fa-check-circle mr-1"></i> Password cocok
+
+                            <!-- Email Field -->
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
+                                    <i class="fas fa-envelope mr-2 text-pinky"></i>Email Address
+                                </label>
+                                <div class="relative">
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        id="email"
+                                        value="{{ old('email') }}"
+                                        required
+                                        autocomplete="email"
+                                        placeholder="your@email.com"
+                                        class="w-full px-5 py-4 pl-12 rounded-xl border border-gray-300 input-field focus:border-pinky focus:outline-none"
+                                    >
+                                    <div class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Password Field -->
+                            <div>
+                                <label for="password" class="block text-sm font-medium text-gray-700 mb-2">
+                                    <i class="fas fa-lock mr-2 text-pinky"></i>Password
+                                </label>
+                                <div class="relative">
+                                    <input
+                                        type="password"
+                                        name="password"
+                                        id="password"
+                                        required
+                                        autocomplete="new-password"
+                                        placeholder="Create a secure password"
+                                        class="w-full px-5 py-4 pl-12 rounded-xl border border-gray-300 input-field focus:border-pinky focus:outline-none"
+                                    >
+                                    <div class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400">
+                                        <i class="fas fa-key"></i>
+                                    </div>
+                                    <button type="button" id="togglePassword" class="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-pinky">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                                <p class="text-xs text-gray-500 mt-2">
+                                    Minimum 8 characters with letters and numbers
                                 </p>
                             </div>
-                        </div>
 
-                        <!-- Terms & Conditions -->
-                        <div class="flex items-start">
-                            <input
-                                type="checkbox"
-                                name="terms"
-                                id="terms"
-                                required
-                                class="h-4 w-4 text-pinky focus:ring-pinky border-gray-300 rounded mt-1"
-                            >
-                            <label for="terms" class="ml-2 block text-sm text-gray-700">
-                                Saya menyetujui
-                                <a href="#" class="text-pinky font-medium hover:text-pink-700">Syarat & Ketentuan</a>
-                                dan
-                                <a href="#" class="text-pinky font-medium hover:text-pink-700">Kebijakan Privasi</a>
-                                Ayyra Stationery
-                            </label>
-                        </div>
-
-                        <!-- Newsletter Subscription -->
-                        <div class="flex items-start">
-                            <input
-                                type="checkbox"
-                                name="newsletter"
-                                id="newsletter"
-                                checked
-                                class="h-4 w-4 text-pinky focus:ring-pinky border-gray-300 rounded mt-1"
-                            >
-                            <label for="newsletter" class="ml-2 block text-sm text-gray-700">
-                                Saya ingin menerima informasi promo, produk baru, dan tips kreatif via email
-                            </label>
-                        </div>
-
-                        <!-- Submit Button -->
-                        <button type="submit"
-                                class="w-full btn-primary text-white py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition duration-300 mt-6">
-                            <i class="fas fa-user-plus mr-2"></i> Daftar Sekarang
-                        </button>
-
-                        <!-- Divider -->
-                        <div class="relative my-8">
-                            <div class="absolute inset-0 flex items-center">
-                                <div class="w-full border-t border-gray-300"></div>
+                            <!-- Confirm Password -->
+                            <div>
+                                <label for="password_confirmation" class="block text-sm font-medium text-gray-700 mb-2">
+                                    <i class="fas fa-lock mr-2 text-pinky"></i>Confirm Password
+                                </label>
+                                <div class="relative">
+                                    <input
+                                        type="password"
+                                        name="password_confirmation"
+                                        id="password_confirmation"
+                                        required
+                                        autocomplete="new-password"
+                                        placeholder="Confirm your password"
+                                        class="w-full px-5 py-4 pl-12 rounded-xl border border-gray-300 input-field focus:border-pinky focus:outline-none"
+                                    >
+                                    <div class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400">
+                                        <i class="fas fa-key"></i>
+                                    </div>
+                                    <button type="button" id="toggleConfirmPassword" class="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-pinky">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
                             </div>
-                            <div class="relative flex justify-center text-sm">
-                                <span class="px-4 bg-white text-gray-500">Atau daftar dengan</span>
+
+                            <!-- Terms & Conditions -->
+                            <div class="flex items-start">
+                                <input
+                                    type="checkbox"
+                                    name="terms"
+                                    id="terms"
+                                    required
+                                    class="h-4 w-4 text-pinky focus:ring-pinky border-gray-300 rounded mt-1"
+                                >
+                                <label for="terms" class="ml-2 block text-sm text-gray-700">
+                                    I agree to the
+                                    <a href="#" class="text-pinky hover:text-pink-700">Terms of Service</a>
+                                    and
+                                    <a href="#" class="text-pinky hover:text-pink-700">Privacy Policy</a>
+                                </label>
                             </div>
-                        </div>
 
-                        <!-- Social Registration -->
-                        <div class="grid grid-cols-2 gap-4">
-                            <a href="#"
-                               class="flex items-center justify-center px-4 py-3 border border-gray-300 rounded-xl hover:bg-gray-50 transition">
-                                <i class="fab fa-google text-red-500 mr-2"></i>
-                                <span>Google</span>
-                            </a>
-                            <a href="#"
-                               class="flex items-center justify-center px-4 py-3 border border-gray-300 rounded-xl hover:bg-gray-50 transition">
-                                <i class="fab fa-facebook text-blue-600 mr-2"></i>
-                                <span>Facebook</span>
-                            </a>
-                        </div>
-                    </form>
+                            <!-- Newsletter Subscription -->
+                            <div class="flex items-center">
+                                <input
+                                    type="checkbox"
+                                    name="newsletter"
+                                    id="newsletter"
+                                    class="h-4 w-4 text-pinky focus:ring-pinky border-gray-300 rounded"
+                                >
+                                <label for="newsletter" class="ml-2 block text-sm text-gray-700">
+                                    Subscribe to our newsletter for exclusive offers and creative tips
+                                </label>
+                            </div>
 
-                    <!-- Login Link -->
-                    <div class="mt-10 text-center">
-                        <p class="text-gray-600">
-                            Sudah punya akun?
-                            <a href="{{ route('login') }}" class="text-pinky font-semibold hover:text-pink-700 transition ml-1">
-                                Masuk Sekarang
-                                <i class="fas fa-arrow-right ml-1"></i>
-                            </a>
-                        </p>
-                        <p class="text-sm text-gray-500 mt-2">
-                            Dengan masuk, Anda dapat mengakses riwayat belanja dan pengaturan akun
-                        </p>
+                            <!-- Submit Button -->
+                            <button type="submit"
+                                    class="w-full btn-primary text-white py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition duration-300">
+                                <i class="fas fa-user-plus mr-2"></i> Create Account
+                            </button>
+
+                            <!-- Divider -->
+                            <div class="relative my-8">
+                                <div class="absolute inset-0 flex items-center">
+                                    <div class="w-full border-t border-gray-300"></div>
+                                </div>
+                                <div class="relative flex justify-center text-sm">
+                                    <span class="px-4 bg-white text-gray-500">Or register with</span>
+                                </div>
+                            </div>
+
+                            <!-- Social Registration -->
+                            <div class="grid grid-cols-2 gap-4">
+                                <a href="#"
+                                   class="flex items-center justify-center px-4 py-3 border border-gray-300 rounded-xl hover:bg-gray-50 transition">
+                                    <i class="fab fa-google text-red-500 mr-2"></i>
+                                    <span>Google</span>
+                                </a>
+                                <a href="#"
+                                   class="flex items-center justify-center px-4 py-3 border border-gray-300 rounded-xl hover:bg-gray-50 transition">
+                                    <i class="fab fa-facebook text-blue-600 mr-2"></i>
+                                    <span>Facebook</span>
+                                </a>
+                            </div>
+                        </form>
+
+                        <!-- Login Link -->
+                        <div class="mt-10 text-center pt-6 border-t border-gray-200">
+                            <p class="text-gray-600">
+                                Already have an account?
+                                <a href="{{ route('login') }}" class="text-pinky font-semibold hover:text-pink-700 transition ml-1">
+                                    Sign In Here
+                                    <i class="fas fa-arrow-right ml-1"></i>
+                                </a>
+                            </p>
+                            <p class="text-sm text-gray-500 mt-2">
+                                Welcome back to our creative community
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 </main>
 
-<!-- Footer -->
-<footer class="bg-gray-900 text-white py-8 mt-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center">
-        <div class="flex justify-center space-x-6 mb-6">
-            <a href="#" class="text-gray-400 hover:text-white transition">
-                <i class="fab fa-instagram"></i>
-            </a>
-            <a href="#" class="text-gray-400 hover:text-white transition">
-                <i class="fab fa-facebook"></i>
-            </a>
-            <a href="#" class="text-gray-400 hover:text-white transition">
-                <i class="fab fa-tiktok"></i>
-            </a>
-            <a href="#" class="text-gray-400 hover:text-white transition">
-                <i class="fab fa-twitter"></i>
-            </a>
-        </div>
+<!-- FOOTER - Konsisten dengan halaman lain -->
+<footer class="bg-gray-900 text-white pt-8 pb-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="#" class="text-gray-400 hover:text-white transition">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-white transition">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-white transition">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-white transition">
+                    <i class="fab fa-pinterest"></i>
+                </a>
+            </div>
 
-        <p class="text-gray-500 text-sm">
-            © 2026 Ayyra Stationery. All rights reserved.
-            <span class="block md:inline mt-2 md:mt-0">
-                <a href="#" class="text-gray-400 hover:text-white ml-2">Kebijakan Privasi</a> •
-                <a href="#" class="text-gray-400 hover:text-white ml-2">Syarat Layanan</a>
-            </span>
-        </p>
+            <div class="border-t border-gray-800 pt-6">
+                <p class="text-gray-500 text-sm">
+                    © 2026 Ayyra Stationery. All rights reserved.
+                    <span class="block mt-2">Jl. Kreatif No. 123, Bandung, Indonesia | +62 812 3456 7890</span>
+                </p>
+            </div>
+        </div>
     </div>
 </footer>
 
@@ -545,8 +490,10 @@
         const menu = document.getElementById('mobile-menu');
         const button = document.getElementById('mobile-menu-button');
 
-        if (!menu.contains(event.target) && !button.contains(event.target)) {
-            menu.classList.add('hidden');
+        if (menu && button) {
+            if (!menu.contains(event.target) && !button.contains(event.target)) {
+                menu.classList.add('hidden');
+            }
         }
     });
 
@@ -568,107 +515,65 @@
 
     // Toggle Confirm Password Visibility
     document.getElementById('toggleConfirmPassword').addEventListener('click', function() {
-        const confirmPasswordInput = document.getElementById('password_confirmation');
+        const passwordInput = document.getElementById('password_confirmation');
         const icon = this.querySelector('i');
 
-        if (confirmPasswordInput.type === 'password') {
-            confirmPasswordInput.type = 'text';
+        if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
             icon.classList.remove('fa-eye');
             icon.classList.add('fa-eye-slash');
         } else {
-            confirmPasswordInput.type = 'password';
+            passwordInput.type = 'password';
             icon.classList.remove('fa-eye-slash');
             icon.classList.add('fa-eye');
         }
     });
 
-    // Password Strength Checker
+    // Password strength indicator
     const passwordInput = document.getElementById('password');
-    const confirmPasswordInput = document.getElementById('password_confirmation');
-    const passwordMatchDiv = document.getElementById('passwordMatch');
+    const passwordStrength = document.createElement('div');
+    passwordStrength.className = 'mt-2 text-xs';
+    passwordInput.parentNode.appendChild(passwordStrength);
 
     passwordInput.addEventListener('input', function() {
         const password = this.value;
-
-        // Check password strength
         let strength = 0;
-        const requirements = {
-            length: password.length >= 8,
-            uppercase: /[A-Z]/.test(password),
-            lowercase: /[a-z]/.test(password),
-            number: /\d/.test(password),
-            special: /[!@#$%^&*(),.?":{}|<>]/.test(password)
-        };
+        let message = '';
+        let color = 'text-red-500';
 
-        // Update requirement icons
-        document.getElementById('reqLength').className = requirements.length ?
-            'fas fa-check-circle text-xs text-success mr-2' : 'fas fa-circle text-xs text-gray-300 mr-2';
-        document.getElementById('reqUppercase').className = requirements.uppercase ?
-            'fas fa-check-circle text-xs text-success mr-2' : 'fas fa-circle text-xs text-gray-300 mr-2';
-        document.getElementById('reqLowercase').className = requirements.lowercase ?
-            'fas fa-check-circle text-xs text-success mr-2' : 'fas fa-circle text-xs text-gray-300 mr-2';
-        document.getElementById('reqNumber').className = requirements.number ?
-            'fas fa-check-circle text-xs text-success mr-2' : 'fas fa-circle text-xs text-gray-300 mr-2';
+        if (password.length >= 8) strength++;
+        if (/[A-Z]/.test(password)) strength++;
+        if (/[a-z]/.test(password)) strength++;
+        if (/[0-9]/.test(password)) strength++;
+        if (/[^A-Za-z0-9]/.test(password)) strength++;
 
-        // Calculate strength
-        if (requirements.length) strength += 25;
-        if (requirements.uppercase) strength += 25;
-        if (requirements.lowercase) strength += 25;
-        if (requirements.number) strength += 15;
-        if (requirements.special) strength += 10;
-
-        // Update strength bar
-        const strengthBar = document.getElementById('passwordStrengthBar');
-        const strengthText = document.getElementById('passwordStrengthText');
-
-        strengthBar.style.width = strength + '%';
-
-        if (strength < 30) {
-            strengthBar.style.backgroundColor = '#ef4444';
-            strengthText.textContent = 'Lemah';
-            strengthText.className = 'text-xs font-medium text-red-500';
-        } else if (strength < 70) {
-            strengthBar.style.backgroundColor = '#f59e0b';
-            strengthText.textContent = 'Cukup';
-            strengthText.className = 'text-xs font-medium text-amber-500';
-        } else if (strength < 90) {
-            strengthBar.style.backgroundColor = '#10b981';
-            strengthText.textContent = 'Baik';
-            strengthText.className = 'text-xs font-medium text-emerald-500';
-        } else {
-            strengthBar.style.backgroundColor = '#3b82f6';
-            strengthText.textContent = 'Sangat Baik';
-            strengthText.className = 'text-xs font-medium text-blue-500';
+        switch(strength) {
+            case 0:
+            case 1:
+                message = 'Weak password';
+                color = 'text-red-500';
+                break;
+            case 2:
+            case 3:
+                message = 'Moderate password';
+                color = 'text-yellow-500';
+                break;
+            case 4:
+                message = 'Strong password';
+                color = 'text-green-500';
+                break;
+            case 5:
+                message = 'Very strong password!';
+                color = 'text-green-600';
+                break;
         }
 
-        // Check password match
-        checkPasswordMatch();
+        passwordStrength.textContent = message;
+        passwordStrength.className = `mt-2 text-xs ${color}`;
     });
 
-    confirmPasswordInput.addEventListener('input', checkPasswordMatch);
-
-    function checkPasswordMatch() {
-        const password = passwordInput.value;
-        const confirmPassword = confirmPasswordInput.value;
-
-        if (confirmPassword === '') {
-            passwordMatchDiv.classList.add('hidden');
-            return;
-        }
-
-        if (password === confirmPassword && password !== '') {
-            passwordMatchDiv.classList.remove('hidden');
-            passwordMatchDiv.querySelector('p').className = 'text-xs text-success flex items-center';
-            passwordMatchDiv.querySelector('i').className = 'fas fa-check-circle mr-1';
-        } else {
-            passwordMatchDiv.classList.remove('hidden');
-            passwordMatchDiv.querySelector('p').className = 'text-xs text-red-500 flex items-center';
-            passwordMatchDiv.querySelector('i').className = 'fas fa-times-circle mr-1';
-        }
-    }
-
-    // Form validation
-    const form = document.getElementById('registerForm');
+    // Form validation feedback
+    const form = document.querySelector('form');
     const inputs = form.querySelectorAll('input[required]');
 
     inputs.forEach(input => {
@@ -687,6 +592,32 @@
                 this.classList.add('border-green-300');
             }
         });
+    });
+
+    // Real-time password matching
+    const confirmPasswordInput = document.getElementById('password_confirmation');
+    const passwordMatch = document.createElement('div');
+    passwordMatch.className = 'mt-2 text-xs';
+    confirmPasswordInput.parentNode.appendChild(passwordMatch);
+
+    confirmPasswordInput.addEventListener('input', function() {
+        const password = passwordInput.value;
+        const confirmPassword = this.value;
+
+        if (confirmPassword === '') {
+            passwordMatch.textContent = '';
+            this.classList.remove('border-red-300', 'border-green-300');
+        } else if (password === confirmPassword) {
+            passwordMatch.textContent = 'Passwords match!';
+            passwordMatch.className = 'mt-2 text-xs text-green-500';
+            this.classList.remove('border-red-300');
+            this.classList.add('border-green-300');
+        } else {
+            passwordMatch.textContent = 'Passwords do not match';
+            passwordMatch.className = 'mt-2 text-xs text-red-500';
+            this.classList.remove('border-green-300');
+            this.classList.add('border-red-300');
+        }
     });
 </script>
 
