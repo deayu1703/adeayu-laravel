@@ -1,176 +1,127 @@
 @extends('layouts.app')
 
+@section('title', 'Masuk - Ayyra Stationery')
+
 @section('content')
-<div class="bg-[#FDF8F7]">
+<div class="min-h-screen flex items-center justify-center bg-[#6B1E23] px-4">
+    <div class="max-w-md w-full">
 
-    {{-- ================= HERO SECTION ================= --}}
-    <section class="max-w-7xl mx-auto px-4 py-16">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-            <div>
-                <h1 class="text-4xl font-bold text-[#6B1E23] leading-tight">
-                    Stationery yang Membuat <br> Setiap Momen Lebih Berarti
-                </h1>
-                <p class="mt-4 text-gray-600">
-                    Ayyra Stationery menyediakan alat tulis lucu, aesthetic, dan berkualitas
-                    untuk menemani belajar, bekerja, dan journaling harianmu.
-                </p>
-
-                <div class="mt-6 flex gap-4">
-                    <a href="#produk"
-                        class="bg-[#6B1E23] text-white px-6 py-3 rounded-xl shadow hover:bg-[#57171B] transition">
-                        Belanja Sekarang
-                    </a>
-                    <a href="#custom"
-                        class="border border-[#6B1E23] text-[#6B1E23] px-6 py-3 rounded-xl hover:bg-[#6B1E23] hover:text-white transition">
-                        Custom Stationery
-                    </a>
+        {{-- ================= BRAND HEADER ================= --}}
+        <div class="text-center mb-10">
+            <a href="/" class="inline-flex items-center gap-3">
+                <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow">
+                    <svg class="w-6 h-6 text-[#6B1E23]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+                    </svg>
                 </div>
-            </div>
+                <span class="text-2xl font-bold text-white tracking-wide">
+                    Ayyra <span class="text-[#F3DADA]">Stationery</span>
+                </span>
+            </a>
 
-            <div class="flex justify-center">
-                <img src="{{ asset('images/hero-stationery.png') }}"
-                    alt="Ayyra Stationery"
-                    class="w-full max-w-md">
-            </div>
-        </div>
-    </section>
-
-    {{-- ================= WHAT WE OFFER ================= --}}
-    <section class="bg-white py-14">
-        <div class="max-w-7xl mx-auto px-4">
-            <h2 class="text-2xl font-bold text-center text-[#6B1E23] mb-10">
-                Apa yang Kami Tawarkan
+            <h2 class="mt-6 text-3xl font-bold text-white">
+                Selamat Datang Kembali
             </h2>
-
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
-                <div class="p-6 rounded-2xl shadow bg-[#FDF1F1]">
-                    <p class="text-xl mb-2">🎀</p>
-                    <h3 class="font-semibold text-gray-800">Desain Lucu & Aesthetic</h3>
-                    <p class="text-sm text-gray-600 mt-2">
-                        Cocok untuk pelajar, mahasiswa, hingga pecinta journaling.
-                    </p>
-                </div>
-
-                <div class="p-6 rounded-2xl shadow bg-[#FDF1F1]">
-                    <p class="text-xl mb-2">📦</p>
-                    <h3 class="font-semibold text-gray-800">Kualitas Terjamin</h3>
-                    <p class="text-sm text-gray-600 mt-2">
-                        Produk dipilih dengan standar kualitas terbaik.
-                    </p>
-                </div>
-
-                <div class="p-6 rounded-2xl shadow bg-[#FDF1F1]">
-                    <p class="text-xl mb-2">🚚</p>
-                    <h3 class="font-semibold text-gray-800">Pengiriman Aman</h3>
-                    <p class="text-sm text-gray-600 mt-2">
-                        Packing rapi dan pengiriman ke seluruh Indonesia.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    {{-- ================= PRODUCT SECTION ================= --}}
-    <section id="produk" class="max-w-7xl mx-auto px-4 py-16">
-        <h2 class="text-2xl font-bold text-center text-[#6B1E23] mb-12">
-            Temukan Stationery Favoritmu
-        </h2>
-
-        @if ($products->count())
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                @foreach ($products as $product)
-                    <a href="{{ route('product.show', $product->slug) }}"
-                        class="group bg-white rounded-2xl overflow-hidden shadow hover:shadow-xl transition">
-
-                        <div class="h-48 bg-gray-100 overflow-hidden">
-                            <img src="{{ asset('storage/' . ($product->images->first()->image ?? '')) }}"
-                                alt="{{ $product->name }}"
-                                class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
-                        </div>
-
-                        <div class="p-4">
-                            <p class="text-sm text-[#6B1E23] font-medium">
-                                {{ $product->category->name }}
-                            </p>
-                            <h3 class="text-lg font-semibold text-gray-800 mt-1 line-clamp-2">
-                                {{ $product->name }}
-                            </h3>
-                            <p class="text-sm text-gray-500 mt-2">Mulai dari</p>
-                            <p class="text-lg font-bold text-[#6B1E23]">
-                                Rp {{ number_format($product->variants->min('price')) }}
-                            </p>
-                        </div>
-                    </a>
-                @endforeach
-            </div>
-
-            <div class="mt-12">
-                {{ $products->withQueryString()->links() }}
-            </div>
-        @else
-            <p class="text-center text-gray-500 py-20">
-                Produk belum tersedia
+            <p class="mt-2 text-[#F3DADA]">
+                Masuk untuk melanjutkan aktivitas Anda
             </p>
-        @endif
-    </section>
+        </div>
 
-    {{-- ================= CUSTOM ORDER ================= --}}
-    <section id="custom" class="bg-white py-16">
-        <div class="max-w-3xl mx-auto px-4">
-            <h2 class="text-2xl font-bold text-center text-[#6B1E23] mb-8">
-                Custom Stationery Sesuai Keinginanmu
-            </h2>
+        {{-- ================= LOGIN CARD ================= --}}
+        <div class="bg-white rounded-3xl shadow-2xl px-8 py-10">
 
-            <form class="bg-[#FDF1F1] p-8 rounded-2xl shadow space-y-4">
-                <input type="text" placeholder="Jenis produk (Notebook, Planner, dll)"
-                    class="w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-[#6B1E23]">
+            <form method="POST" action="{{ route('login') }}" class="space-y-6">
+                @csrf
 
-                <input type="text" placeholder="Tema atau warna favorit"
-                    class="w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-[#6B1E23]">
+                {{-- Email --}}
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
+                        Alamat Email
+                    </label>
+                    <input id="email" name="email" type="email" required
+                        value="{{ old('email') }}"
+                        placeholder="email@contoh.com"
+                        class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#6B1E23] focus:outline-none">
+                    @error('email')
+                        <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
+                    @enderror
+                </div>
 
-                <input type="number" placeholder="Jumlah"
-                    class="w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-[#6B1E23]">
+                {{-- Password --}}
+                <div>
+                    <div class="flex items-center justify-between mb-2">
+                        <label for="password" class="block text-sm font-medium text-gray-700">
+                            Kata Sandi
+                        </label>
+                        <a href="{{ route('password.request') }}"
+                           class="text-sm font-medium text-[#6B1E23] hover:underline">
+                            Lupa kata sandi?
+                        </a>
+                    </div>
 
-                <textarea rows="3" placeholder="Catatan tambahan"
-                    class="w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-[#6B1E23]"></textarea>
+                    <input id="password" name="password" type="password" required
+                        placeholder="••••••••"
+                        class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#6B1E23] focus:outline-none">
+                    @error('password')
+                        <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
+                    @enderror
+                </div>
 
+                {{-- Remember --}}
+                <div class="flex items-center">
+                    <input id="remember" name="remember" type="checkbox"
+                        class="h-4 w-4 text-[#6B1E23] border-gray-300 rounded focus:ring-[#6B1E23]">
+                    <label for="remember" class="ml-2 text-sm text-gray-700">
+                        Ingat saya
+                    </label>
+                </div>
+
+                {{-- Submit --}}
                 <button type="submit"
-                    class="w-full bg-[#6B1E23] text-white py-3 rounded-xl hover:bg-[#57171B] transition">
-                    Kirim Permintaan
+                    class="w-full bg-[#6B1E23] text-white py-3 rounded-xl font-semibold text-lg hover:bg-[#57171B] transition">
+                    Masuk
                 </button>
+
+                {{-- Error Global --}}
+                @if ($errors->any())
+                    <div class="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-xl text-sm">
+                        @foreach ($errors->all() as $error)
+                            <p>{{ $error }}</p>
+                        @endforeach
+                    </div>
+                @endif
             </form>
+
+            {{-- Divider --}}
+            <div class="my-8 flex items-center">
+                <div class="flex-grow border-t border-gray-300"></div>
+                <span class="mx-4 text-sm text-gray-500">atau</span>
+                <div class="flex-grow border-t border-gray-300"></div>
+            </div>
+
+            {{-- Social Login (Optional UI) --}}
+            <div class="grid grid-cols-2 gap-4">
+                <button type="button"
+                    class="border border-gray-300 rounded-xl py-3 text-sm font-medium hover:bg-gray-50 transition">
+                    Google
+                </button>
+                <button type="button"
+                    class="border border-gray-300 rounded-xl py-3 text-sm font-medium hover:bg-gray-50 transition">
+                    Facebook
+                </button>
+            </div>
+
+            {{-- Register --}}
+            <p class="mt-8 text-center text-gray-600 text-sm">
+                Belum punya akun?
+                <a href="{{ route('register') }}"
+                   class="font-semibold text-[#6B1E23] hover:underline">
+                    Daftar sekarang
+                </a>
+            </p>
+
         </div>
-    </section>
-
-    {{-- ================= TESTIMONI ================= --}}
-    <section class="max-w-7xl mx-auto px-4 py-16">
-        <h2 class="text-2xl font-bold text-center text-[#6B1E23] mb-10">
-            Kata Mereka tentang Ayyra Stationery
-        </h2>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="bg-white p-6 rounded-2xl shadow">
-                <p class="text-gray-600 text-sm">
-                    "Produknya lucu banget dan kualitasnya bagus. Cocok buat journaling!"
-                </p>
-                <p class="mt-4 font-semibold text-[#6B1E23]">— Nabila</p>
-            </div>
-
-            <div class="bg-white p-6 rounded-2xl shadow">
-                <p class="text-gray-600 text-sm">
-                    "Packaging rapi, pengiriman cepat, dan barang sesuai foto."
-                </p>
-                <p class="mt-4 font-semibold text-[#6B1E23]">— Alya</p>
-            </div>
-
-            <div class="bg-white p-6 rounded-2xl shadow">
-                <p class="text-gray-600 text-sm">
-                    "Planner custom-nya cantik banget, bakal order lagi!"
-                </p>
-                <p class="mt-4 font-semibold text-[#6B1E23]">— Rani</p>
-            </div>
-        </div>
-    </section>
-
+    </div>
 </div>
 @endsection
