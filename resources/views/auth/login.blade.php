@@ -42,7 +42,8 @@
                     <input id="email" name="email" type="email" required
                         value="{{ old('email') }}"
                         placeholder="email@contoh.com"
-                        class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#6B1E23] focus:outline-none">
+                        class="w-full px-4 py-3 rounded-xl border border-gray-300
+                               focus:ring-2 focus:ring-[#6B1E23] focus:outline-none">
                     @error('email')
                         <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
                     @enderror
@@ -62,13 +63,14 @@
 
                     <input id="password" name="password" type="password" required
                         placeholder="••••••••"
-                        class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#6B1E23] focus:outline-none">
+                        class="w-full px-4 py-3 rounded-xl border border-gray-300
+                               focus:ring-2 focus:ring-[#6B1E23] focus:outline-none">
                     @error('password')
                         <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
                     @enderror
                 </div>
 
-                {{-- Remember --}}
+                {{-- Remember Me --}}
                 <div class="flex items-center">
                     <input id="remember" name="remember" type="checkbox"
                         class="h-4 w-4 text-[#6B1E23] border-gray-300 rounded focus:ring-[#6B1E23]">
@@ -79,7 +81,8 @@
 
                 {{-- Submit --}}
                 <button type="submit"
-                    class="w-full bg-[#6B1E23] text-white py-3 rounded-xl font-semibold text-lg hover:bg-[#57171B] transition">
+                    class="w-full bg-[#6B1E23] text-white py-3 rounded-xl
+                           font-semibold text-lg hover:bg-[#57171B] transition">
                     Masuk
                 </button>
 
@@ -100,19 +103,21 @@
                 <div class="flex-grow border-t border-gray-300"></div>
             </div>
 
-            {{-- Social Login (Optional UI) --}}
+            {{-- Social Login (UI Only) --}}
             <div class="grid grid-cols-2 gap-4">
                 <button type="button"
-                    class="border border-gray-300 rounded-xl py-3 text-sm font-medium hover:bg-gray-50 transition">
+                    class="border border-gray-300 rounded-xl py-3
+                           text-sm font-medium hover:bg-gray-50 transition">
                     Google
                 </button>
                 <button type="button"
-                    class="border border-gray-300 rounded-xl py-3 text-sm font-medium hover:bg-gray-50 transition">
+                    class="border border-gray-300 rounded-xl py-3
+                           text-sm font-medium hover:bg-gray-50 transition">
                     Facebook
                 </button>
             </div>
 
-            {{-- Register --}}
+            {{-- Register Link --}}
             <p class="mt-8 text-center text-gray-600 text-sm">
                 Belum punya akun?
                 <a href="{{ route('register') }}"

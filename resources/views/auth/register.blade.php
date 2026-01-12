@@ -24,14 +24,14 @@
                 Buat Akun Baru
             </h2>
             <p class="mt-2 text-[#F3DADA]">
-                Bergabung dan mulai berbelanja di Ayyra Stationery
+                Daftar untuk mulai berbelanja di Ayyra Stationery
             </p>
         </div>
 
         {{-- ================= REGISTER CARD ================= --}}
         <div class="bg-white rounded-3xl shadow-2xl px-8 py-10">
 
-            <form method="POST" action="{{ route('register') }}" class="space-y-5">
+            <form method="POST" action="{{ route('register') }}" class="space-y-6">
                 @csrf
 
                 {{-- Nama --}}
@@ -42,7 +42,8 @@
                     <input id="name" name="name" type="text" required
                         value="{{ old('name') }}"
                         placeholder="Nama lengkap Anda"
-                        class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#6B1E23] focus:outline-none">
+                        class="w-full px-4 py-3 rounded-xl border border-gray-300
+                               focus:ring-2 focus:ring-[#6B1E23] focus:outline-none">
                     @error('name')
                         <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
                     @enderror
@@ -56,7 +57,8 @@
                     <input id="email" name="email" type="email" required
                         value="{{ old('email') }}"
                         placeholder="email@contoh.com"
-                        class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#6B1E23] focus:outline-none">
+                        class="w-full px-4 py-3 rounded-xl border border-gray-300
+                               focus:ring-2 focus:ring-[#6B1E23] focus:outline-none">
                     @error('email')
                         <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
                     @enderror
@@ -69,9 +71,10 @@
                     </label>
                     <input id="password" name="password" type="password" required
                         placeholder="••••••••"
-                        class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#6B1E23] focus:outline-none">
+                        class="w-full px-4 py-3 rounded-xl border border-gray-300
+                               focus:ring-2 focus:ring-[#6B1E23] focus:outline-none">
                     <p class="mt-1 text-xs text-gray-500">
-                        Minimal 8 karakter dengan kombinasi huruf dan angka
+                        Minimal 8 karakter, kombinasi huruf dan angka
                     </p>
                     @error('password')
                         <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
@@ -85,13 +88,15 @@
                     </label>
                     <input id="password_confirmation" name="password_confirmation" type="password" required
                         placeholder="••••••••"
-                        class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#6B1E23] focus:outline-none">
+                        class="w-full px-4 py-3 rounded-xl border border-gray-300
+                               focus:ring-2 focus:ring-[#6B1E23] focus:outline-none">
                 </div>
 
                 {{-- Terms --}}
                 <div class="flex items-start">
                     <input id="terms" type="checkbox" required
-                        class="mt-1 h-4 w-4 text-[#6B1E23] border-gray-300 rounded focus:ring-[#6B1E23]">
+                        class="mt-1 h-4 w-4 text-[#6B1E23] border-gray-300 rounded
+                               focus:ring-[#6B1E23]">
                     <label for="terms" class="ml-3 text-sm text-gray-700">
                         Saya setuju dengan
                         <a href="#" class="font-medium text-[#6B1E23] hover:underline">
@@ -106,7 +111,8 @@
 
                 {{-- Submit --}}
                 <button type="submit"
-                    class="w-full bg-[#6B1E23] text-white py-3 rounded-xl font-semibold text-lg hover:bg-[#57171B] transition">
+                    class="w-full bg-[#6B1E23] text-white py-3 rounded-xl
+                           font-semibold text-lg hover:bg-[#57171B] transition">
                     Daftar Sekarang
                 </button>
 
@@ -127,19 +133,21 @@
                 <div class="flex-grow border-t border-gray-300"></div>
             </div>
 
-            {{-- Social Register (UI only) --}}
+            {{-- Social Register (UI Only) --}}
             <div class="grid grid-cols-2 gap-4">
                 <button type="button"
-                    class="border border-gray-300 rounded-xl py-3 text-sm font-medium hover:bg-gray-50 transition">
+                    class="border border-gray-300 rounded-xl py-3
+                           text-sm font-medium hover:bg-gray-50 transition">
                     Google
                 </button>
                 <button type="button"
-                    class="border border-gray-300 rounded-xl py-3 text-sm font-medium hover:bg-gray-50 transition">
+                    class="border border-gray-300 rounded-xl py-3
+                           text-sm font-medium hover:bg-gray-50 transition">
                     Facebook
                 </button>
             </div>
 
-            {{-- Login --}}
+            {{-- Login Link --}}
             <p class="mt-8 text-center text-gray-600 text-sm">
                 Sudah punya akun?
                 <a href="{{ route('login') }}"
