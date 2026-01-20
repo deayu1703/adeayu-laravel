@@ -8,17 +8,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            /* Palette warna maroon dan pendukung */
-            --maroon-dark: #6B1E23;
-            --maroon-medium: #8C2B30;
-            --maroon-light: #B9545A;
-            --cream: #F7F0E6;
-            --off-white: #FFFBF5;
-            --dusty-pink: #E8C4C4;
-            --beige: #EAD8C2;
-            --text-dark: #3A1C1E;
-            --text-light: #FFF9F5;
-            --shadow: rgba(107, 30, 35, 0.1);
+            /* Palette warna soft pink dan pendukung */
+            --pink-dark: #E8A2A8;
+            --pink-medium: #F4C2C2;
+            --pink-light: #FFE5E5;
+            --pink-soft: #FFF0F0;
+            --cream: #FFF9F5;
+            --off-white: #FFFDFB;
+            --lavender: #E6E6FA;
+            --mint: #D4F1E6;
+            --text-dark: #5A4A4A;
+            --text-light: #FFF9F9;
+            --shadow: rgba(232, 162, 168, 0.15);
 
             /* Border radius */
             --radius-sm: 8px;
@@ -39,7 +40,7 @@
         body {
             font-family: 'Poppins', sans-serif;
             color: var(--text-dark);
-            background-color: var(--maroon-medium);
+            background: linear-gradient(135deg, var(--pink-soft) 0%, var(--lavender) 100%);
             line-height: 1.6;
             min-height: 100vh;
             display: flex;
@@ -80,39 +81,39 @@
             width: 3rem;
             height: 3rem;
             border-radius: 50%;
-            background-color: var(--cream);
+            background-color: white;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 15px var(--shadow);
         }
 
         .logo-text {
             font-size: 1.8rem;
             font-weight: 700;
-            color: var(--cream);
+            color: var(--pink-dark);
         }
 
         .logo-text span {
-            color: var(--dusty-pink);
+            color: var(--text-dark);
         }
 
         .welcome-title {
             font-size: 2.2rem;
-            color: var(--cream);
+            color: var(--pink-dark);
             margin-bottom: 0.5rem;
         }
 
         .welcome-subtitle {
-            color: var(--dusty-pink);
+            color: var(--text-dark);
             font-size: 1rem;
         }
 
         /* ================= REGISTER CARD ================= */
         .register-card {
-            background-color: var(--off-white);
+            background-color: white;
             border-radius: var(--radius-xl);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 15px 35px rgba(232, 162, 168, 0.2);
             padding: 2.5rem;
             width: 100%;
         }
@@ -131,7 +132,7 @@
         .form-label {
             font-size: 0.9rem;
             font-weight: 500;
-            color: var(--maroon-dark);
+            color: var(--pink-dark);
             margin-bottom: 0.5rem;
         }
 
@@ -142,12 +143,14 @@
             font-family: 'Poppins', sans-serif;
             font-size: 1rem;
             transition: var(--transition);
+            background-color: var(--cream);
         }
 
         .form-input:focus {
             outline: none;
-            border-color: var(--maroon-light);
-            box-shadow: 0 0 0 3px rgba(185, 84, 90, 0.2);
+            border-color: var(--pink-medium);
+            box-shadow: 0 0 0 3px rgba(244, 194, 194, 0.3);
+            background-color: white;
         }
 
         .form-input::placeholder {
@@ -165,8 +168,9 @@
             align-items: flex-start;
             gap: 0.75rem;
             padding: 1rem;
-            background-color: rgba(234, 216, 194, 0.3);
+            background-color: var(--pink-soft);
             border-radius: var(--radius-md);
+            border: 1px solid var(--pink-light);
         }
 
         .terms-checkbox {
@@ -182,8 +186,8 @@
         }
 
         .terms-checkbox:checked {
-            background-color: var(--maroon-light);
-            border-color: var(--maroon-light);
+            background-color: var(--pink-medium);
+            border-color: var(--pink-medium);
         }
 
         .terms-checkbox:checked::after {
@@ -203,17 +207,18 @@
         }
 
         .terms-link {
-            color: var(--maroon-light);
+            color: var(--pink-medium);
             font-weight: 600;
         }
 
         .terms-link:hover {
+            color: var(--pink-dark);
             text-decoration: underline;
         }
 
         .btn-register {
-            background-color: var(--maroon-dark);
-            color: var(--cream);
+            background: linear-gradient(135deg, var(--pink-medium) 0%, var(--pink-dark) 100%);
+            color: white;
             padding: 1rem;
             border-radius: var(--radius-lg);
             font-family: 'Quicksand', sans-serif;
@@ -223,17 +228,27 @@
             cursor: pointer;
             transition: var(--transition);
             margin-top: 0.5rem;
+            box-shadow: 0 4px 15px rgba(232, 162, 168, 0.3);
         }
 
         .btn-register:hover {
-            background-color: var(--maroon-medium);
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(107, 30, 35, 0.3);
+            box-shadow: 0 8px 20px rgba(232, 162, 168, 0.4);
+        }
+
+        .btn-register:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .btn-register:disabled:hover {
+            transform: none;
+            box-shadow: 0 4px 15px rgba(232, 162, 168, 0.3);
         }
 
         .error-message {
-            background-color: rgba(255, 0, 0, 0.05);
-            border: 1px solid rgba(255, 0, 0, 0.2);
+            background-color: var(--pink-soft);
+            border: 1px solid var(--pink-light);
             color: #c00;
             padding: 0.75rem;
             border-radius: var(--radius-md);
@@ -251,12 +266,12 @@
         .divider-line {
             flex-grow: 1;
             height: 1px;
-            background-color: #ddd;
+            background: linear-gradient(90deg, transparent 0%, var(--pink-light) 50%, transparent 100%);
         }
 
         .divider-text {
             padding: 0 1rem;
-            color: #888;
+            color: var(--pink-medium);
             font-size: 0.9rem;
         }
 
@@ -274,7 +289,7 @@
             justify-content: center;
             gap: 0.5rem;
             padding: 0.9rem;
-            border: 1px solid #ddd;
+            border: 1px solid var(--pink-light);
             border-radius: var(--radius-lg);
             background-color: white;
             font-weight: 500;
@@ -284,23 +299,25 @@
         }
 
         .btn-social:hover {
-            background-color: var(--cream);
-            border-color: #bbb;
+            background-color: var(--pink-soft);
+            border-color: var(--pink-medium);
+            transform: translateY(-2px);
         }
 
         /* ================= LOGIN LINK ================= */
         .login-link {
             text-align: center;
-            color: #666;
+            color: var(--text-dark);
             font-size: 0.9rem;
         }
 
         .login-link a {
-            color: var(--maroon-light);
+            color: var(--pink-medium);
             font-weight: 600;
         }
 
         .login-link a:hover {
+            color: var(--pink-dark);
             text-decoration: underline;
         }
 
@@ -311,7 +328,7 @@
 
         .strength-meter {
             height: 4px;
-            background-color: #eee;
+            background-color: var(--pink-light);
             border-radius: 2px;
             overflow: hidden;
             margin-bottom: 0.3rem;
@@ -326,7 +343,52 @@
 
         .strength-text {
             font-size: 0.75rem;
-            color: #666;
+            color: var(--pink-medium);
+        }
+
+        /* ================= FLOWER DECORATION ================= */
+        .flower-decoration {
+            position: fixed;
+            width: 100px;
+            height: 100px;
+            opacity: 0.1;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .flower-1 {
+            top: 10%;
+            left: 5%;
+            transform: rotate(15deg);
+        }
+
+        .flower-2 {
+            bottom: 15%;
+            right: 8%;
+            transform: rotate(-20deg);
+        }
+
+        .flower-3 {
+            top: 50%;
+            left: 2%;
+            transform: rotate(45deg);
+        }
+
+        /* ================= PASSWORD VISIBILITY TOGGLE ================= */
+        .password-wrapper {
+            position: relative;
+        }
+
+        .password-toggle {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: var(--pink-medium);
+            cursor: pointer;
+            font-size: 1.1rem;
         }
 
         /* ================= RESPONSIVE ================= */
@@ -365,12 +427,23 @@
     </style>
 </head>
 <body>
+    <!-- Flower Decorations -->
+    <div class="flower-decoration flower-1">
+        <i class="fas fa-heart" style="font-size: 100px; color: var(--pink-medium);"></i>
+    </div>
+    <div class="flower-decoration flower-2">
+        <i class="fas fa-star" style="font-size: 80px; color: var(--pink-medium);"></i>
+    </div>
+    <div class="flower-decoration flower-3">
+        <i class="fas fa-feather-alt" style="font-size: 70px; color: var(--pink-medium);"></i>
+    </div>
+
     <div class="register-container">
         {{-- ================= BRAND HEADER ================= --}}
         <div class="brand-header">
             <a href="/" class="logo-link">
                 <div class="logo-icon">
-                    <i class="fas fa-pencil-alt" style="color: var(--maroon-dark); font-size: 1.2rem;"></i>
+                    <i class="fas fa-pencil-alt" style="color: var(--pink-dark); font-size: 1.2rem;"></i>
                 </div>
                 <div class="logo-text">
                     Ayyra <span>Stationery</span>
@@ -378,7 +451,7 @@
             </a>
 
             <h2 class="welcome-title">
-                Buat Akun Baru
+                Bergabunglah Dengan Kami ✨
             </h2>
             <p class="welcome-subtitle">
                 Daftar untuk mulai berbelanja di Ayyra Stationery
@@ -393,6 +466,7 @@
                 {{-- Nama --}}
                 <div class="form-group">
                     <label for="name" class="form-label">
+                        <i class="fas fa-user" style="margin-right: 8px;"></i>
                         Nama Lengkap
                     </label>
                     <input id="name" name="name" type="text" required
@@ -400,13 +474,17 @@
                         placeholder="Nama lengkap Anda"
                         class="form-input">
                     @error('name')
-                        <div class="error-message">{{ $message }}</div>
+                        <div class="error-message">
+                            <i class="fas fa-exclamation-circle" style="margin-right: 5px;"></i>
+                            {{ $message }}
+                        </div>
                     @enderror
                 </div>
 
                 {{-- Email --}}
                 <div class="form-group">
                     <label for="email" class="form-label">
+                        <i class="fas fa-envelope" style="margin-right: 8px;"></i>
                         Alamat Email
                     </label>
                     <input id="email" name="email" type="email" required
@@ -414,18 +492,27 @@
                         placeholder="email@contoh.com"
                         class="form-input">
                     @error('email')
-                        <div class="error-message">{{ $message }}</div>
+                        <div class="error-message">
+                            <i class="fas fa-exclamation-circle" style="margin-right: 5px;"></i>
+                            {{ $message }}
+                        </div>
                     @enderror
                 </div>
 
                 {{-- Password --}}
                 <div class="form-group">
                     <label for="password" class="form-label">
+                        <i class="fas fa-lock" style="margin-right: 8px;"></i>
                         Kata Sandi
                     </label>
-                    <input id="password" name="password" type="password" required
-                        placeholder="••••••••"
-                        class="form-input">
+                    <div class="password-wrapper">
+                        <input id="password" name="password" type="password" required
+                            placeholder="••••••••"
+                            class="form-input">
+                        <button type="button" class="password-toggle" id="togglePassword">
+                            <i class="far fa-eye"></i>
+                        </button>
+                    </div>
                     <div class="password-strength">
                         <div class="strength-meter">
                             <div class="strength-fill" id="passwordStrengthFill"></div>
@@ -435,18 +522,27 @@
                         </div>
                     </div>
                     @error('password')
-                        <div class="error-message">{{ $message }}</div>
+                        <div class="error-message">
+                            <i class="fas fa-exclamation-circle" style="margin-right: 5px;"></i>
+                            {{ $message }}
+                        </div>
                     @enderror
                 </div>
 
                 {{-- Konfirmasi Password --}}
                 <div class="form-group">
                     <label for="password_confirmation" class="form-label">
+                        <i class="fas fa-lock" style="margin-right: 8px;"></i>
                         Konfirmasi Kata Sandi
                     </label>
-                    <input id="password_confirmation" name="password_confirmation" type="password" required
-                        placeholder="••••••••"
-                        class="form-input">
+                    <div class="password-wrapper">
+                        <input id="password_confirmation" name="password_confirmation" type="password" required
+                            placeholder="••••••••"
+                            class="form-input">
+                        <button type="button" class="password-toggle" id="toggleConfirmPassword">
+                            <i class="far fa-eye"></i>
+                        </button>
+                    </div>
                 </div>
 
                 {{-- Terms and Conditions --}}
@@ -464,6 +560,7 @@
 
                 {{-- Submit Button --}}
                 <button type="submit" class="btn-register">
+                    <i class="fas fa-user-plus" style="margin-right: 10px;"></i>
                     Daftar Sekarang
                 </button>
 
@@ -471,7 +568,7 @@
                 @if ($errors->any())
                     <div class="error-message">
                         @foreach ($errors->all() as $error)
-                            <p>{{ $error }}</p>
+                            <p><i class="fas fa-exclamation-circle" style="margin-right: 5px;"></i>{{ $error }}</p>
                         @endforeach
                     </div>
                 @endif
@@ -480,7 +577,7 @@
             {{-- Divider --}}
             <div class="divider">
                 <div class="divider-line"></div>
-                <span class="divider-text">atau</span>
+                <span class="divider-text">atau daftar dengan</span>
                 <div class="divider-line"></div>
             </div>
 
@@ -507,9 +604,12 @@
     </div>
 
     <script>
-        // Animasi sederhana saat halaman dimuat
+        // Animasi saat halaman dimuat
         document.addEventListener('DOMContentLoaded', function() {
             const registerCard = document.querySelector('.register-card');
+            const flowers = document.querySelectorAll('.flower-decoration');
+
+            // Animasi register card
             registerCard.style.opacity = '0';
             registerCard.style.transform = 'translateY(20px)';
 
@@ -518,6 +618,55 @@
                 registerCard.style.opacity = '1';
                 registerCard.style.transform = 'translateY(0)';
             }, 100);
+
+            // Animasi bunga dekorasi
+            flowers.forEach((flower, index) => {
+                flower.style.opacity = '0';
+                flower.style.transform = `rotate(${index * 15}deg) scale(0.5)`;
+
+                setTimeout(() => {
+                    flower.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                    flower.style.opacity = '0.1';
+                    flower.style.transform = `rotate(${index * 15}deg) scale(1)`;
+                }, 300 + (index * 200));
+            });
+
+            // Set initial state for terms checkbox
+            const termsCheckbox = document.getElementById('terms');
+            const registerButton = document.querySelector('.btn-register');
+            registerButton.disabled = !termsCheckbox.checked;
+        });
+
+        // Toggle password visibility
+        document.getElementById('togglePassword').addEventListener('click', function() {
+            const passwordInput = document.getElementById('password');
+            const icon = this.querySelector('i');
+
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } else {
+                passwordInput.type = 'password';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
+        });
+
+        // Toggle confirm password visibility
+        document.getElementById('toggleConfirmPassword').addEventListener('click', function() {
+            const confirmPasswordInput = document.getElementById('password_confirmation');
+            const icon = this.querySelector('i');
+
+            if (confirmPasswordInput.type === 'password') {
+                confirmPasswordInput.type = 'text';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } else {
+                confirmPasswordInput.type = 'password';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
         });
 
         // Password strength indicator
@@ -531,6 +680,7 @@
             let text = 'Minimal 8 karakter, kombinasi huruf dan angka';
             let color = '#ddd';
 
+            // Check password strength
             if (password.length >= 8) strength += 25;
             if (/[A-Z]/.test(password)) strength += 25;
             if (/[0-9]/.test(password)) strength += 25;
@@ -538,6 +688,7 @@
 
             strengthFill.style.width = `${strength}%`;
 
+            // Determine strength level and colors
             if (strength === 0) {
                 color = '#ddd';
                 text = 'Masukkan kata sandi';
@@ -595,9 +746,28 @@
             }
         });
 
-        // Set initial state
-        registerButton.disabled = !termsCheckbox.checked;
-        registerButton.style.opacity = termsCheckbox.checked ? '1' : '0.6';
+        // Efek hover pada input
+        const inputs = document.querySelectorAll('.form-input');
+        inputs.forEach(input => {
+            input.addEventListener('focus', function() {
+                this.parentElement.style.transform = 'translateY(-2px)';
+            });
+
+            input.addEventListener('blur', function() {
+                this.parentElement.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Efek saat tombol sosial diklik
+        const socialButtons = document.querySelectorAll('.btn-social');
+        socialButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                this.style.transform = 'translateY(-2px) scale(0.98)';
+                setTimeout(() => {
+                    this.style.transform = 'translateY(-2px) scale(1)';
+                }, 150);
+            });
+        });
     </script>
 </body>
 </html>

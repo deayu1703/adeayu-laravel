@@ -8,17 +8,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            /* Palette warna maroon dan pendukung */
-            --maroon-dark: #6B1E23;
-            --maroon-medium: #8C2B30;
-            --maroon-light: #B9545A;
-            --cream: #F7F0E6;
-            --off-white: #FFFBF5;
-            --dusty-pink: #E8C4C4;
-            --beige: #EAD8C2;
-            --text-dark: #3A1C1E;
-            --text-light: #FFF9F5;
-            --shadow: rgba(107, 30, 35, 0.1);
+            /* Palette warna soft pink dan pendukung */
+            --pink-dark: #E8A2A8;
+            --pink-medium: #F4C2C2;
+            --pink-light: #FFE5E5;
+            --pink-soft: #FFF0F0;
+            --cream: #FFF9F5;
+            --off-white: #FFFDFB;
+            --lavender: #E6E6FA;
+            --mint: #D4F1E6;
+            --text-dark: #5A4A4A;
+            --text-light: #FFF9F9;
+            --shadow: rgba(232, 162, 168, 0.15);
 
             /* Spacing */
             --section-padding: 5rem 1.5rem;
@@ -83,7 +84,7 @@
             font-size: 2rem;
             text-align: center;
             margin-bottom: 2.5rem;
-            color: var(--maroon-dark);
+            color: var(--pink-dark);
             position: relative;
         }
 
@@ -95,7 +96,7 @@
             transform: translateX(-50%);
             width: 80px;
             height: 3px;
-            background-color: var(--maroon-light);
+            background-color: var(--pink-medium);
             border-radius: 2px;
         }
 
@@ -119,13 +120,13 @@
             font-family: 'Quicksand', sans-serif;
             font-size: 1.8rem;
             font-weight: 700;
-            color: var(--maroon-dark);
+            color: var(--pink-dark);
             display: flex;
             align-items: center;
         }
 
         .logo i {
-            color: var(--maroon-light);
+            color: var(--pink-medium);
             margin-right: 8px;
         }
 
@@ -136,13 +137,13 @@
 
         .nav-menu a {
             font-weight: 500;
-            color: var(--maroon-dark);
+            color: var(--pink-dark);
             padding: 0.5rem 0;
             position: relative;
         }
 
         .nav-menu a:hover {
-            color: var(--maroon-light);
+            color: var(--pink-medium);
         }
 
         .nav-menu a::after {
@@ -152,7 +153,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background-color: var(--maroon-light);
+            background-color: var(--pink-medium);
             transition: var(--transition);
         }
 
@@ -168,7 +169,7 @@
 
         .nav-icons a {
             font-size: 1.2rem;
-            color: var(--maroon-dark);
+            color: var(--pink-dark);
             position: relative;
         }
 
@@ -180,7 +181,7 @@
             position: absolute;
             top: -8px;
             right: -8px;
-            background-color: var(--maroon-light);
+            background-color: var(--pink-medium);
             color: white;
             font-size: 0.7rem;
             width: 18px;
@@ -191,17 +192,49 @@
             align-items: center;
         }
 
+        .auth-buttons {
+            display: flex;
+            gap: 0.8rem;
+            margin-left: 1rem;
+        }
+
+        .btn-login, .btn-register {
+            padding: 0.5rem 1.2rem;
+            border-radius: var(--radius-lg);
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .btn-login {
+            background-color: transparent;
+            color: var(--pink-dark);
+            border: 1.5px solid var(--pink-medium);
+        }
+
+        .btn-login:hover {
+            background-color: var(--pink-soft);
+        }
+
+        .btn-register {
+            background-color: var(--pink-medium);
+            color: white;
+        }
+
+        .btn-register:hover {
+            background-color: var(--pink-dark);
+        }
+
         .mobile-menu-btn {
             display: none;
             font-size: 1.5rem;
-            color: var(--maroon-dark);
+            color: var(--pink-dark);
             background: none;
         }
 
         /* ================= HERO SECTION ================= */
         .hero {
-            background-color: var(--maroon-medium);
-            color: var(--text-light);
+            background: linear-gradient(135deg, var(--pink-soft) 0%, var(--lavender) 100%);
+            color: var(--text-dark);
             padding: var(--section-padding);
             position: relative;
             overflow: hidden;
@@ -218,12 +251,13 @@
             font-size: 3.2rem;
             margin-bottom: 1rem;
             line-height: 1.2;
+            color: var(--pink-dark);
         }
 
         .hero-content p {
             font-size: 1.1rem;
             margin-bottom: 2rem;
-            color: var(--dusty-pink);
+            color: var(--text-dark);
             max-width: 90%;
         }
 
@@ -234,8 +268,8 @@
         }
 
         .btn-primary {
-            background-color: var(--cream);
-            color: var(--maroon-dark);
+            background-color: var(--pink-medium);
+            color: white;
             padding: 0.9rem 2rem;
             border-radius: var(--radius-lg);
             font-weight: 600;
@@ -243,15 +277,15 @@
         }
 
         .btn-primary:hover {
-            background-color: var(--beige);
+            background-color: var(--pink-dark);
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 15px rgba(232, 162, 168, 0.3);
         }
 
         .btn-secondary {
             background-color: transparent;
-            color: var(--cream);
-            border: 2px solid var(--cream);
+            color: var(--pink-dark);
+            border: 2px solid var(--pink-medium);
             padding: 0.9rem 2rem;
             border-radius: var(--radius-lg);
             font-weight: 600;
@@ -259,8 +293,7 @@
         }
 
         .btn-secondary:hover {
-            background-color: var(--cream);
-            color: var(--maroon-dark);
+            background-color: var(--pink-soft);
         }
 
         .hero-image {
@@ -271,9 +304,10 @@
 
         .hero-image img {
             border-radius: var(--radius-xl);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 15px 30px rgba(232, 162, 168, 0.2);
             max-width: 100%;
             height: auto;
+            border: 8px solid white;
         }
 
         .hero-decoration {
@@ -282,7 +316,7 @@
             right: -20px;
             width: 120px;
             height: 120px;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='%23E8C4C4' fill-opacity='0.3' d='M50,10 C70,10 90,30 90,50 C90,70 70,90 50,90 C30,90 10,70 10,50 C10,30 30,10 50,10 Z' /%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='%23F4C2C2' fill-opacity='0.3' d='M50,10 C70,10 90,30 90,50 C90,70 70,90 50,90 C30,90 10,70 10,50 C10,30 30,10 50,10 Z' /%3E%3C/svg%3E");
             background-size: contain;
             background-repeat: no-repeat;
             z-index: 0;
@@ -322,7 +356,7 @@
             position: absolute;
             top: 15px;
             left: 15px;
-            background-color: var(--maroon-light);
+            background-color: var(--pink-medium);
             color: white;
             font-size: 0.8rem;
             padding: 0.3rem 0.8rem;
@@ -363,13 +397,13 @@
             font-size: 1.1rem;
             font-weight: 600;
             margin-bottom: 0.5rem;
-            color: var(--maroon-dark);
+            color: var(--pink-dark);
         }
 
         .product-price {
             font-size: 1.2rem;
             font-weight: 700;
-            color: var(--maroon-medium);
+            color: var(--pink-medium);
             margin-bottom: 1rem;
         }
 
@@ -389,7 +423,7 @@
 
         .btn-add-to-cart {
             width: 100%;
-            background-color: var(--maroon-light);
+            background-color: var(--pink-medium);
             color: white;
             padding: 0.8rem;
             border-radius: var(--radius-md);
@@ -398,7 +432,7 @@
         }
 
         .btn-add-to-cart:hover {
-            background-color: var(--maroon-dark);
+            background-color: var(--pink-dark);
         }
 
         .btn-add-to-cart i {
@@ -413,15 +447,15 @@
 
         .btn-view-all {
             background-color: transparent;
-            color: var(--maroon-medium);
-            border: 2px solid var(--maroon-light);
+            color: var(--pink-medium);
+            border: 2px solid var(--pink-medium);
             padding: 0.8rem 2rem;
             border-radius: var(--radius-lg);
             font-weight: 500;
         }
 
         .btn-view-all:hover {
-            background-color: var(--maroon-light);
+            background-color: var(--pink-medium);
             color: white;
         }
 
@@ -445,30 +479,31 @@
         .category-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px var(--shadow);
+            background-color: var(--pink-soft);
         }
 
         .category-icon {
             width: 80px;
             height: 80px;
-            background-color: var(--dusty-pink);
+            background-color: var(--pink-light);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 1rem;
-            color: var(--maroon-dark);
+            color: var(--pink-dark);
             font-size: 2rem;
         }
 
         .category-name {
             font-size: 1.2rem;
             font-weight: 600;
-            color: var(--maroon-dark);
+            color: var(--pink-dark);
         }
 
         /* ================= BRANDS ================= */
         .brands {
-            background-color: white;
+            background-color: var(--pink-soft);
         }
 
         .brands-grid {
@@ -498,20 +533,21 @@
         .testimonial-placeholder {
             text-align: center;
             padding: 3rem 1rem;
-            background-color: var(--beige);
+            background-color: white;
             border-radius: var(--radius-lg);
-            color: var(--maroon-dark);
+            color: var(--pink-dark);
+            box-shadow: 0 5px 15px var(--shadow);
         }
 
         .testimonial-placeholder i {
             font-size: 3rem;
-            color: var(--maroon-light);
+            color: var(--pink-medium);
             margin-bottom: 1.5rem;
         }
 
         /* ================= FOOTER ================= */
         .footer {
-            background-color: var(--maroon-dark);
+            background: linear-gradient(135deg, var(--pink-dark) 0%, var(--pink-medium) 100%);
             color: var(--text-light);
             padding: 4rem 1.5rem 2rem;
         }
@@ -528,11 +564,11 @@
             font-size: 1.8rem;
             font-weight: 700;
             margin-bottom: 1rem;
-            color: var(--cream);
+            color: white;
         }
 
         .footer-tagline {
-            color: var(--dusty-pink);
+            color: var(--pink-light);
             margin-bottom: 1.5rem;
             max-width: 300px;
         }
@@ -540,7 +576,7 @@
         .footer-links h3 {
             font-size: 1.2rem;
             margin-bottom: 1.2rem;
-            color: var(--cream);
+            color: white;
         }
 
         .footer-links ul li {
@@ -548,14 +584,14 @@
         }
 
         .footer-links ul li a:hover {
-            color: var(--dusty-pink);
+            color: var(--pink-light);
         }
 
         .copyright {
             text-align: center;
             padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: var(--dusty-pink);
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--pink-light);
             font-size: 0.9rem;
         }
 
@@ -597,13 +633,13 @@
 
         .cart-title {
             font-size: 1.5rem;
-            color: var(--maroon-dark);
+            color: var(--pink-dark);
         }
 
         .close-cart {
             font-size: 1.5rem;
             background: none;
-            color: var(--maroon-dark);
+            color: var(--pink-dark);
         }
 
         .cart-items {
@@ -639,11 +675,11 @@
         .cart-item-name {
             font-weight: 600;
             margin-bottom: 0.5rem;
-            color: var(--maroon-dark);
+            color: var(--pink-dark);
         }
 
         .cart-item-price {
-            color: var(--maroon-medium);
+            color: var(--pink-medium);
             font-weight: 600;
             margin-bottom: 0.5rem;
         }
@@ -658,8 +694,8 @@
             width: 25px;
             height: 25px;
             border-radius: 50%;
-            background-color: var(--beige);
-            color: var(--maroon-dark);
+            background-color: var(--pink-light);
+            color: var(--pink-dark);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -668,7 +704,7 @@
 
         .cart-item-total {
             font-weight: 700;
-            color: var(--maroon-dark);
+            color: var(--pink-dark);
         }
 
         .remove-item {
@@ -680,11 +716,11 @@
         }
 
         .remove-item:hover {
-            color: var(--maroon-light);
+            color: var(--pink-medium);
         }
 
         .cart-summary {
-            background-color: var(--cream);
+            background-color: var(--pink-soft);
             padding: 1.5rem;
             border-radius: var(--radius-lg);
             margin-bottom: 1.5rem;
@@ -699,7 +735,7 @@
         .summary-total {
             font-weight: 700;
             font-size: 1.2rem;
-            color: var(--maroon-dark);
+            color: var(--pink-dark);
             border-top: 1px solid #ddd;
             padding-top: 1rem;
             margin-top: 1rem;
@@ -765,6 +801,12 @@
                 visibility: visible;
             }
 
+            .auth-buttons {
+                margin-left: 0;
+                margin-top: 1rem;
+                justify-content: center;
+            }
+
             .mobile-menu-btn {
                 display: block;
             }
@@ -818,6 +860,10 @@
                     <i class="fas fa-shopping-cart"></i>
                     <span class="cart-badge" id="cartBadge">0</span>
                 </a>
+                <div class="auth-buttons">
+                    <a href="#" class="btn-login">Login</a>
+                    <a href="#" class="btn-register">Register</a>
+                </div>
             </div>
         </div>
     </nav>
@@ -826,17 +872,17 @@
     <section class="hero" id="home">
         <div class="container">
             <div class="hero-content">
-                <h1>Ayyra Stationery</h1>
-                <p>Stationery lucu dan estetik untuk menemani setiap catatan dan cerita</p>
+                <h1>Inspired By Sakura<br>Furukawashiko Flake Stickers</h1>
+                <p>Koleksi stiker estetik dengan motif sakura yang cantik untuk memperindah catatan dan planner Anda.</p>
                 <div class="hero-btns">
-                    <a href="#best-sellers" class="btn-primary">Belanja Sekarang</a>
+                    <a href="#best-sellers" class="btn-primary">Shop Now</a>
                     <a href="#new-arrival" class="btn-secondary">Lihat Koleksi</a>
                 </div>
             </div>
 
             <div class="hero-image">
                 <div class="hero-decoration"></div>
-                <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Stationery Collection">
+                <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Sticker Collection">
             </div>
         </div>
     </section>
@@ -1087,16 +1133,16 @@
 
             <div class="brands-grid">
                 <div class="brand-logo">
-                    <h3 style="color: var(--maroon-dark); font-weight: 700;">BOOK SHOP</h3>
+                    <h3 style="color: var(--pink-dark); font-weight: 700;">BOOK SHOP</h3>
                 </div>
                 <div class="brand-logo">
-                    <h3 style="color: var(--maroon-dark); font-weight: 700;">Education</h3>
+                    <h3 style="color: var(--pink-dark); font-weight: 700;">Education</h3>
                 </div>
                 <div class="brand-logo">
-                    <h3 style="color: var(--maroon-dark); font-weight: 700;">KIDS EDUCATION</h3>
+                    <h3 style="color: var(--pink-dark); font-weight: 700;">KIDS EDUCATION</h3>
                 </div>
                 <div class="brand-logo">
-                    <h3 style="color: var(--maroon-dark); font-weight: 700;">STATIONERY</h3>
+                    <h3 style="color: var(--pink-dark); font-weight: 700;">STATIONERY</h3>
                 </div>
             </div>
         </div>
@@ -1407,7 +1453,7 @@
                 position: fixed;
                 top: 100px;
                 right: 20px;
-                background-color: var(--maroon-light);
+                background-color: var(--pink-medium);
                 color: white;
                 padding: 1rem 1.5rem;
                 border-radius: var(--radius-md);
