@@ -9,7 +9,7 @@
 
             {{-- LEFT --}}
             <div>
-                <h1 class="text-4xl md:text-5xl font-extrabold text-[#e8a2a8] leading-tight">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-[#6b1d1d] leading-tight">
                     Stationery yang Bikin <br>
                     Nulis Jadi Lebih Seru
                 </h1>
@@ -19,9 +19,9 @@
                     dan fungsional untuk menemani hari produktifmu.
                 </p>
 
-                <div class="mt-7 flex items-center gap-4">
+                <div class="mt-7 flex flex-wrap items-center gap-4">
                     <a href="#produk"
-                       class="bg-[#e8a2a8] text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition">
+                       class="bg-[#6b1d1d] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#541616] transition">
                         Belanja Sekarang
                     </a>
 
@@ -36,10 +36,9 @@
 
             {{-- RIGHT --}}
             <div class="flex justify-center">
-                <img
-                    src="{{ asset('images/stationery.jpg') }}"
-                    alt="Ayyra Stationery"
-                    class="w-full max-w-md object-contain rounded-3xl">
+                <img src="{{ asset('images/hero-stationery.png') }}"
+                     class="w-full max-w-md"
+                     alt="Ayyra Stationery">
             </div>
 
         </div>
@@ -49,7 +48,7 @@
     <section class="bg-white py-20">
         <div class="max-w-6xl mx-auto px-6 text-center">
 
-            <h2 class="text-2xl font-bold text-[#e8a2a8] mb-12">
+            <h2 class="text-2xl font-bold text-[#6b1d1d] mb-12">
                 Apa yang Kami Tawarkan
             </h2>
 
@@ -85,45 +84,116 @@
     <section id="produk" class="py-20 bg-[#fdecec]">
         <div class="max-w-6xl mx-auto px-6 text-center">
 
-            <h2 class="text-2xl font-bold text-[#e8a2a8] mb-10">
+            <h2 class="text-2xl font-bold text-[#6b1d1d] mb-10">
                 Temukan Stationery Favoritmu
             </h2>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+
                 @foreach ($products->take(6) as $product)
-                    <a href="{{ route('product.show', $product->slug) }}"
-                       class="group bg-[#f6e6e6] rounded-xl p-5 hover:shadow-lg transition">
+                <a href="{{ route('product.show', $product->slug) }}"
+                   class="group bg-[#f5dada] rounded-xl p-5 hover:shadow-lg transition">
 
-                        <div class="h-40 flex items-center justify-center mb-4">
-                            <img
-                                src="{{ asset('storage/' . optional($product->images->first())->image) }}"
-                                alt="{{ $product->name }}"
-                                class="h-full object-contain group-hover:scale-105 transition">
-                        </div>
+                    <div class="h-40 flex items-center justify-center mb-4">
+                        @if($product->images->first())
+                            <img src="{{ asset('storage/' . $product->images->first()->image) }}"
+                                 class="h-full object-contain group-hover:scale-105 transition"
+                                 alt="{{ $product->name }}">
+                        @endif
+                    </div>
 
-                        <h3 class="font-bold text-gray-800">
-                            {{ $product->name }}
-                        </h3>
+                    <h3 class="font-bold text-gray-800">
+                        {{ $product->name }}
+                    </h3>
 
-                        <p class="text-sm text-gray-600 mt-1">
-                            Mulai dari
-                        </p>
+                    <p class="text-sm text-gray-600 mt-1">
+                        Mulai dari
+                    </p>
 
-                        <p class="font-bold text-[#e8a2a8]">
-                            Rp {{ number_format($product->variants->min('price')) }}
-                        </p>
-                    </a>
+                    <p class="font-bold text-[#6b1d1d]">
+                        Rp {{ number_format($product->variants->min('price')) }}
+                    </p>
+                </a>
                 @endforeach
+
             </div>
 
             <div class="mt-10">
                 <a href="{{ route('home') }}"
-                   class="inline-block text-sm font-semibold text-[#e8a2a8] underline">
+                   class="inline-block text-sm font-semibold text-[#6b1d1d] underline">
                     Lihat Semua Produk →
                 </a>
             </div>
         </div>
     </section>
+
+    {{-- ================= CUSTOM ORDER FORM ================= --}}
+    <section class="py-20 bg-white">
+        <div class="max-w-3xl mx-auto px-6">
+
+            <h2 class="text-2xl font-bold text-[#6b1d1d] text-center mb-10">
+                📌 Pesan Stationery Custom Sekarang
+            </h2>
+
+            <form class="bg-white border rounded-2xl p-8 space-y-5 shadow">
+
+                <input type="text"
+                       placeholder="Jenis Produk (Notebook, Pulpen, dll)"
+                       class="w-full border rounded-lg p-3 text-sm">
+
+                <input type="text"
+                       placeholder="Warna / Tema yang Diinginkan"
+                       class="w-full border rounded-lg p-3 text-sm">
+
+                <input type="number"
+                       placeholder="Jumlah"
+                       class="w-full border rounded-lg p-3 text-sm">
+
+                <input type="date"
+                       class="w-full border rounded-lg p-3 text-sm">
+
+                <button type="submit"
+                        class="w-full bg-[#6b1d1d] hover:bg-[#541616] text-white py-3 rounded-lg font-bold transition">
+                    Kirim Permintaan
+                </button>
+            </form>
+
+        </div>
+    </section>
+
+    {{-- ================= FOOTER ================= --}}
+    <footer class="bg-[#6b1d1d] text-white pt-14 pb-10">
+        <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+
+            <div>
+                <h3 class="font-bold text-lg">Ayyra Stationery</h3>
+                <p class="text-sm text-gray-200 mt-3">
+                    Stationery lucu untuk hari yang lebih produktif.
+                </p>
+            </div>
+
+            <div>
+                <h4 class="font-semibold mb-3">Menu</h4>
+                <ul class="space-y-2 text-sm text-gray-200">
+                    <li>Beranda</li>
+                    <li>Produk</li>
+                    <li>Kontak</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-semibold mb-3">Kontak</h4>
+                <p class="text-sm text-gray-200">
+                    ayyra.stationery@email.com
+                </p>
+            </div>
+
+        </div>
+
+        <p class="text-center text-sm text-gray-300 mt-10">
+            © {{ date('Y') }} Ayyra Stationery. All rights reserved.
+        </p>
+    </footer>
 
 </div>
 @endsection
