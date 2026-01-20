@@ -36,9 +36,11 @@
 
             {{-- RIGHT --}}
             <div class="flex justify-center">
-                <img src="{{ asset('images/hero-stationery.png') }}"
-                     class="w-full max-w-md"
-                     alt="Ayyra Stationery">
+                <img
+  src="{{ asset('images/stationery.png') }}"
+  alt="Ayyra Stationery"
+  class="w-full max-w-md object-contain rounded-3xl">
+
             </div>
 
         </div>
