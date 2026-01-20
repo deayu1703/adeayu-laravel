@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="bg-[#fdf8f8] overflow-hidden">
+<div class="bg-[#fdecec] overflow-hidden">
 
     {{-- ================= HERO ================= --}}
     <section class="relative max-w-7xl mx-auto px-6 pt-14 pb-20">
@@ -19,7 +19,7 @@
                     dan fungsional untuk menemani hari produktifmu.
                 </p>
 
-                <div class="mt-7 flex items-center gap-4">
+                <div class="mt-7 flex flex-wrap items-center gap-4">
                     <a href="#produk"
                        class="bg-[#6b1d1d] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#541616] transition">
                         Belanja Sekarang
@@ -81,7 +81,7 @@
     </section>
 
     {{-- ================= DISCOVER PRODUCTS ================= --}}
-    <section id="produk" class="py-20 bg-[#fdf8f8]">
+    <section id="produk" class="py-20 bg-[#fdecec]">
         <div class="max-w-6xl mx-auto px-6 text-center">
 
             <h2 class="text-2xl font-bold text-[#6b1d1d] mb-10">
@@ -92,12 +92,14 @@
 
                 @foreach ($products->take(6) as $product)
                 <a href="{{ route('product.show', $product->slug) }}"
-                   class="group bg-[#f6e6e6] rounded-xl p-5 hover:shadow-lg transition">
+                   class="group bg-[#f5dada] rounded-xl p-5 hover:shadow-lg transition">
 
                     <div class="h-40 flex items-center justify-center mb-4">
-                        <img src="{{ asset('storage/' . ($product->images->first()->image ?? '')) }}"
-                             class="h-full object-contain group-hover:scale-105 transition"
-                             alt="{{ $product->name }}">
+                        @if($product->images->first())
+                            <img src="{{ asset('storage/' . $product->images->first()->image) }}"
+                                 class="h-full object-contain group-hover:scale-105 transition"
+                                 alt="{{ $product->name }}">
+                        @endif
                     </div>
 
                     <h3 class="font-bold text-gray-800">
@@ -135,20 +137,23 @@
 
             <form class="bg-white border rounded-2xl p-8 space-y-5 shadow">
 
-                <input type="text" placeholder="Jenis Produk (Notebook, Pulpen, dll)"
+                <input type="text"
+                       placeholder="Jenis Produk (Notebook, Pulpen, dll)"
                        class="w-full border rounded-lg p-3 text-sm">
 
-                <input type="text" placeholder="Warna / Tema yang Diinginkan"
+                <input type="text"
+                       placeholder="Warna / Tema yang Diinginkan"
                        class="w-full border rounded-lg p-3 text-sm">
 
-                <input type="number" placeholder="Jumlah"
+                <input type="number"
+                       placeholder="Jumlah"
                        class="w-full border rounded-lg p-3 text-sm">
 
                 <input type="date"
                        class="w-full border rounded-lg p-3 text-sm">
 
                 <button type="submit"
-                        class="w-full bg-[#6b1d1d] hover:bg-[#541616] text-white py-3 rounded-lg font-bold">
+                        class="w-full bg-[#6b1d1d] hover:bg-[#541616] text-white py-3 rounded-lg font-bold transition">
                     Kirim Permintaan
                 </button>
             </form>
