@@ -872,8 +872,9 @@
     <section class="hero" id="home">
         <div class="container">
             <div class="hero-content">
-                <h1>Inspired By Sakura<br>Furukawashiko Flake Stickers</h1>
-                <p>Koleksi stiker estetik dengan motif sakura yang cantik untuk memperindah catatan dan planner Anda.</p>
+                <h1>Made with Ayyra Vibes<br>Aesthetic Stationery Collection</h1>
+                <p>Koleksi berbagai stationery aesthetic yang dirancang untuk mempercantik catatan,
+planner, dan momen produktif harianmu.</p>
                 <div class="hero-btns">
                     <a href="#best-sellers" class="btn-primary">Shop Now</a>
                     <a href="#new-arrival" class="btn-secondary">Lihat Koleksi</a>
@@ -901,7 +902,7 @@
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">Notebook</h3>
-                        <div class="product-price">Rp 110.000</div>
+                        <div class="product-price">Rp 56.000 <span class="original">Rp 78.000</span></div>
                         <div class="product-rating">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -909,7 +910,7 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                         </div>
-                        <button class="btn-add-to-cart" data-id="1" data-name="Notebook" data-price="110000" data-img="/images/buku 1.jpg">
+                        <button class="btn-add-to-cart" data-id="1" data-name="Notebook" data-price="56000" data-img="/images/buku 1.jpg">
                             <i class="fas fa-cart-plus"></i> Tambah ke Keranjang
                         </button>
                     </div>
@@ -923,7 +924,7 @@
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">Pen</h3>
-                        <div class="product-price">Rp 110.000 <span class="original">Rp 150.000</span></div>
+                        <div class="product-price">Rp 21.000 <span class="original">Rp 26.000</span></div>
                         <div class="product-rating">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -931,7 +932,7 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star-half-alt"></i>
                         </div>
-                        <button class="btn-add-to-cart" data-id="2" data-name="Pen" data-price="110000" data-img="/images/pulpen 1.jpg">
+                        <button class="btn-add-to-cart" data-id="2" data-name="Pen" data-price="21000" data-img="/images/pulpen 1.jpg">
                             <i class="fas fa-cart-plus"></i> Tambah ke Keranjang
                         </button>
                     </div>
@@ -945,7 +946,7 @@
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">Washi Tape</h3>
-                        <div class="product-price">Rp 150.000</div>
+                        <div class="product-price">Rp 23.000 <span class="original">Rp 31.000</span></div>
                         <div class="product-rating">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -953,7 +954,7 @@
                             <i class="fas fa-star"></i>
                             <i class="far fa-star"></i>
                         </div>
-                        <button class="btn-add-to-cart" data-id="3" data-name="Washi Tape" data-price="150000" data-img="/images/washi tape.jpg">
+                        <button class="btn-add-to-cart" data-id="3" data-name="Washi Tape" data-price="23000" data-img="/images/washi tape.jpg">
                             <i class="fas fa-cart-plus"></i> Tambah ke Keranjang
                         </button>
                     </div>
@@ -963,11 +964,11 @@
                 <div class="product-card">
                     <div class="product-badge">Best Seller</div>
                     <div class="product-img">
-                        <img src="https://images.unsplash.com/photo-1618166581245-9c5c98e5e61c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Large Desk Calendar">
+                        <img src="/images/sticky notes.jpg" alt="Sticky Notes">
                     </div>
                     <div class="product-info">
-                        <h3 class="product-name">Large Desk Calendar</h3>
-                        <div class="product-price">Rp 150.000 <span class="original">Rp 180.000</span></div>
+                        <h3 class="product-name">Sticky Notes</h3>
+                        <div class="product-price">Rp 10.000 <span class="original">Rp 10.000</span></div>
                         <div class="product-rating">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -975,7 +976,7 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                         </div>
-                        <button class="btn-add-to-cart" data-id="4" data-name="Large Desk Calendar" data-price="150000" data-img="https://images.unsplash.com/photo-1618166581245-9c5c98e5e61c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80">
+                        <button class="btn-add-to-cart" data-id="4" data-name="Sticky Notes" data-price="10000" data-img="/images/sticky notes.jpg">
                             <i class="fas fa-cart-plus"></i> Tambah ke Keranjang
                         </button>
                     </div>
@@ -999,7 +1000,7 @@
                     <div class="category-icon">
                         <i class="fas fa-book"></i>
                     </div>
-                    <h3 class="category-name">Notebook</h3>
+                    <h3 class="category-name">Book</h3>
                 </a>
 
                 <!-- Kategori 2 -->
@@ -1007,7 +1008,7 @@
                     <div class="category-icon">
                         <i class="fas fa-sticky-note"></i>
                     </div>
-                    <h3 class="category-name">Sticker</h3>
+                    <h3 class="category-name">Journaling</h3>
                 </a>
 
                 <!-- Kategori 3 -->
@@ -1015,7 +1016,7 @@
                     <div class="category-icon">
                         <i class="fas fa-pencil-ruler"></i>
                     </div>
-                    <h3 class="category-name">Pencil Pocket</h3>
+                    <h3 class="category-name">Organizer</h3>
                 </a>
 
                 <!-- Kategori 4 -->
@@ -1023,7 +1024,7 @@
                     <div class="category-icon">
                         <i class="fas fa-pencil-alt"></i>
                     </div>
-                    <h3 class="category-name">Pencil</h3>
+                    <h3 class="category-name">Journaling</h3>
                 </a>
             </div>
         </div>
@@ -1038,11 +1039,11 @@
                 <!-- Produk 1 -->
                 <div class="product-card">
                     <div class="product-img">
-                        <img src="https://images.unsplash.com/photo-1587614382346-4ec70e388b28?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Campus Key Ring">
+                        <img src="/images/binder.jpg" alt="Binder">
                     </div>
                     <div class="product-info">
-                        <h3 class="product-name">Campus Key Ring</h3>
-                        <div class="product-price">Rp 200.000</div>
+                        <h3 class="product-name">Binder</h3>
+                        <div class="product-price">Rp 57.000</div>
                         <div class="product-rating">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -1050,7 +1051,7 @@
                             <i class="fas fa-star"></i>
                             <i class="far fa-star"></i>
                         </div>
-                        <button class="btn-add-to-cart" data-id="5" data-name="Campus Key Ring" data-price="200000" data-img="https://images.unsplash.com/photo-1587614382346-4ec70e388b28?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80">
+                        <button class="btn-add-to-cart" data-id="5" data-name="Binder" data-price="57000" data-img="/images/binder.jpg">
                             <i class="fas fa-cart-plus"></i> Tambah ke Keranjang
                         </button>
                     </div>
@@ -1059,10 +1060,10 @@
                 <!-- Produk 2 -->
                 <div class="product-card">
                     <div class="product-img">
-                        <img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Dream Pencil">
+                        <img src="/images/storage box organizer.jpg" alt="Storage Box Organizer">
                     </div>
                     <div class="product-info">
-                        <h3 class="product-name">BT2i Dream Pencil</h3>
+                        <h3 class="product-name">Storage Box Organizer</h3>
                         <div class="product-price">Rp 150.000</div>
                         <div class="product-rating">
                             <i class="fas fa-star"></i>
@@ -1071,7 +1072,7 @@
                             <i class="fas fa-star-half-alt"></i>
                             <i class="far fa-star"></i>
                         </div>
-                        <button class="btn-add-to-cart" data-id="6" data-name="BT2i Dream Pencil" data-price="150000" data-img="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80">
+                        <button class="btn-add-to-cart" data-id="6" data-name="Storage Box Organizer" data-price="150000" data-img="/images/storage box organizer.jpg">
                             <i class="fas fa-cart-plus"></i> Tambah ke Keranjang
                         </button>
                     </div>
@@ -1080,11 +1081,11 @@
                 <!-- Produk 3 -->
                 <div class="product-card">
                     <div class="product-img">
-                        <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Peanuts Schedule Book">
+                        <img src="/images/diary set.jpg" alt="Diary Set">
                     </div>
                     <div class="product-info">
-                        <h3 class="product-name">Peanuts Schedule Book</h3>
-                        <div class="product-price">Rp 280.000</div>
+                        <h3 class="product-name">Diary Set</h3>
+                        <div class="product-price">Rp 138.000</div>
                         <div class="product-rating">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -1092,7 +1093,7 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                         </div>
-                        <button class="btn-add-to-cart" data-id="7" data-name="Peanuts Schedule Book" data-price="280000" data-img="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80">
+                        <button class="btn-add-to-cart" data-id="7" data-name="Diary Set" data-price="138000" data-img="/images/diary set.jpg">
                             <i class="fas fa-cart-plus"></i> Tambah ke Keranjang
                         </button>
                     </div>
@@ -1101,11 +1102,11 @@
                 <!-- Produk 4 -->
                 <div class="product-card">
                     <div class="product-img">
-                        <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Night Sky Planner">
+                        <img src="/images/stiker set.jpg" alt="Stiker Set">
                     </div>
                     <div class="product-info">
-                        <h3 class="product-name">Night Sky Planner</h3>
-                        <div class="product-price">Rp 180.000 <span class="original">Rp 200.000</span></div>
+                        <h3 class="product-name">Stiker Set</h3>
+                        <div class="product-price">Rp 124.000</div>
                         <div class="product-rating">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -1113,7 +1114,7 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star-half-alt"></i>
                         </div>
-                        <button class="btn-add-to-cart" data-id="8" data-name="Night Sky Planner" data-price="180000" data-img="https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80">
+                        <button class="btn-add-to-cart" data-id="8" data-name="Stiker Set" data-price="124000" data-img="/images/stiker set.jpg">
                             <i class="fas fa-cart-plus"></i> Tambah ke Keranjang
                         </button>
                     </div>
@@ -1186,9 +1187,9 @@
                     <h3>Kategori</h3>
                     <ul>
                         <li><a href="#notebook">Notebook</a></li>
-                        <li><a href="#sticker">Sticker</a></li>
-                        <li><a href="#pencil-pocket">Pencil Pocket</a></li>
-                        <li><a href="#pencil">Pencil</a></li>
+                        <li><a href="#sticker">Journaling</a></li>
+                        <li><a href="#pencil-pocket">Organizer Box</a></li>
+                        <li><a href="#pencil">Alat Tulis</a></li>
                         <li><a href="#planner">Planner</a></li>
                     </ul>
                 </div>
@@ -1197,14 +1198,14 @@
                     <h3>Kontak</h3>
                     <ul>
                         <li><a href="mailto:info@ayyrastationery.com">info@ayyrastationery.com</a></li>
-                        <li><a href="tel:+6281234567890">+62 812 3456 7890</a></li>
-                        <li>Jl. Stationery No. 123, Jakarta</li>
+                        <li><a href="tel:+623151658358">+62 315 1658 358</a></li>
+                        <li>Jl. Surabaya IV No. 24, Bogor</li>
                     </ul>
                 </div>
             </div>
 
             <div class="copyright">
-                <p>&copy; 2023 Ayyra Stationery. All rights reserved.</p>
+                <p>&copy; 2026 Ayyra Stationery. All rights reserved.</p>
             </div>
         </div>
     </footer>

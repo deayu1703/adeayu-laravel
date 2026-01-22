@@ -1,56 +1,20 @@
 <?php
-use App\Http\Controllers\Admin\CategoryController;
-use App\Http\Controllers\Admin\ProductController;
-use App\Http\Controllers\Admin\AddressController;
-use App\Http\Controllers\User\AddressController as UserAddressController;
+
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\CheckoutController;
 
+Route::get('/', function () {
+    return view('home.index');
+})->middleware(['auth', 'verified']); // ← TITIK KOMA WAJIB
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
-
-
-Route::get('/product/{slug}', [HomeController::class, 'show'])
-    ->name('product.show');
-
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
-    // Tambahkan route ini untuk menangani tombol "Tambah ke Keranjang"
-    Route::post('/cart/add', [CheckoutController::class, 'addToCart'])->name('cart.add');
-
-
-Route::get('/cart', [CheckoutController::class, 'index'])->name('cart.index');
-Route::post('/cart/add', [CheckoutController::class, 'addToCart'])->name('cart.add');
-Route::post('/cart/update', [CheckoutController::class, 'updateQty'])->name('cart.updateQty');
-Route::delete('/cart/remove/{variantId}', [CheckoutController::class, 'remove'])->name('cart.remove');
-
-
-    Route::post('/checkout', [CheckoutController::class, 'store'])->name('checkout.store');
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-
-// Admin
-Route::middleware(['auth', 'role:admin'])
-    ->prefix('admin')
-    ->name('admin.')
-    ->group(function () {
-
-
-        Route::get('/dashboard', fn() => view('admin.dashboard'))
-            ->name('dashboard');
-
-
-        Route::resource('categories', CategoryController::class);
-        Route::resource('products', ProductController::class);
-Route::resource('addresses', AddressController::class);
-    });
-
-
-
-
-// User
-Route::middleware(['auth', 'role:user'])->group(function () {
-    Route::get('/user/dashboard', fn() => view('user.dashboard'));
-Route::resource('addresses', UserAddressController::class);
-});
+require __DIR__.'/auth.php';

@@ -21,7 +21,33 @@
 
 
             {{-- Right Section --}}
-            <div class="flex items-center gap-4">
+<div class="flex items-center gap-4">
+
+    @guest
+        <a href="{{ route('login') }}"
+           class="text-gray-700 hover:text-indigo-600 font-medium transition">
+            Login
+        </a>
+
+        <a href="{{ route('register') }}"
+           class="bg-indigo-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-indigo-700 transition">
+            Register
+        </a>
+    @endguest
+
+    @auth
+        <span class="text-sm text-gray-700 font-medium">
+            Hi, {{ Auth::user()->name }}
+        </span>
+
+        <form action="{{ route('logout') }}" method="POST">
+            @csrf
+            <button type="submit"
+                    class="text-red-500 hover:text-red-600 font-medium text-sm">
+                Logout
+            </button>
+        </form>
+    @endauth
 
 
                 {{-- Cart --}}
