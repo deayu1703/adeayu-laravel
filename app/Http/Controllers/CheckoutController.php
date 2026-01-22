@@ -88,16 +88,10 @@ public function addToCart(Request $request)
      * REMOVE ITEM
      */
     public function remove($variantId)
-    {
-        $cart = session('cart', []);
-        unset($cart[$variantId]);
+{
+    dd($variantId, session('cart'));
+}
 
-
-        session(['cart' => $cart]);
-
-
-        return back();
-    }
 
 
     /**

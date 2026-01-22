@@ -20,9 +20,10 @@ Route::middleware('auth')->group(function () {
     Route::post('/cart/add', [CheckoutController::class, 'addToCart'])->name('cart.add');
 
 
-    Route::get('/cart', [CheckoutController::class, 'index'])->name('cart.index');
-    Route::post('/cart/update', [CheckoutController::class, 'updateQty'])->name('cart.update');
-    Route::delete('/cart/{variantId}', [CheckoutController::class, 'remove'])->name('cart.remove');
+Route::get('/cart', [CheckoutController::class, 'index'])->name('cart.index');
+Route::post('/cart/add', [CheckoutController::class, 'addToCart'])->name('cart.add');
+Route::post('/cart/update', [CheckoutController::class, 'updateQty'])->name('cart.updateQty');
+Route::delete('/cart/remove/{variantId}', [CheckoutController::class, 'remove'])->name('cart.remove');
 
 
     Route::post('/checkout', [CheckoutController::class, 'store'])->name('checkout.store');

@@ -882,7 +882,7 @@
 
             <div class="hero-image">
                 <div class="hero-decoration"></div>
-                <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Sticker Collection">
+                <img src="/images/stationery.jpg" alt="Sticker Collection">
             </div>
         </div>
     </section>
@@ -897,10 +897,10 @@
                 <div class="product-card">
                     <div class="product-badge">Best Seller</div>
                     <div class="product-img">
-                        <img src="https://images.unsplash.com/photo-1544717305-99670f9c28f7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Stapler Set">
+                        <img src="/images/buku 1.jpg" alt="Notebook">
                     </div>
                     <div class="product-info">
-                        <h3 class="product-name">Stapler Set Aesthetic</h3>
+                        <h3 class="product-name">Notebook</h3>
                         <div class="product-price">Rp 110.000</div>
                         <div class="product-rating">
                             <i class="fas fa-star"></i>
@@ -909,7 +909,7 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                         </div>
-                        <button class="btn-add-to-cart" data-id="1" data-name="Stapler Set Aesthetic" data-price="110000" data-img="https://images.unsplash.com/photo-1544717305-99670f9c28f7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80">
+                        <button class="btn-add-to-cart" data-id="1" data-name="Notebook" data-price="110000" data-img="/images/buku 1.jpg">
                             <i class="fas fa-cart-plus"></i> Tambah ke Keranjang
                         </button>
                     </div>
@@ -919,10 +919,10 @@
                 <div class="product-card">
                     <div class="product-badge">Best Seller</div>
                     <div class="product-img">
-                        <img src="https://images.unsplash.com/photo-1629198720836-0f7d2d6e7652?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Zipper Pen Pouch">
+                        <img src="/images/pulpen 1.jpg" alt="Pen">
                     </div>
                     <div class="product-info">
-                        <h3 class="product-name">Zipper Pen Pouch</h3>
+                        <h3 class="product-name">Pen</h3>
                         <div class="product-price">Rp 110.000 <span class="original">Rp 150.000</span></div>
                         <div class="product-rating">
                             <i class="fas fa-star"></i>
@@ -931,7 +931,7 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star-half-alt"></i>
                         </div>
-                        <button class="btn-add-to-cart" data-id="2" data-name="Zipper Pen Pouch" data-price="110000" data-img="https://images.unsplash.com/photo-1629198720836-0f7d2d6e7652?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80">
+                        <button class="btn-add-to-cart" data-id="2" data-name="Pen" data-price="110000" data-img="/images/pulpen 1.jpg">
                             <i class="fas fa-cart-plus"></i> Tambah ke Keranjang
                         </button>
                     </div>
@@ -941,10 +941,10 @@
                 <div class="product-card">
                     <div class="product-badge">Best Seller</div>
                     <div class="product-img">
-                        <img src="https://images.unsplash.com/photo-1589561454227-60d6c9d5cfd6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Weekly Planner">
+                        <img src="/images/washi tape.jpg" alt="Weekly Planner">
                     </div>
                     <div class="product-info">
-                        <h3 class="product-name">Weekly Planner Floral</h3>
+                        <h3 class="product-name">Washi Tape</h3>
                         <div class="product-price">Rp 150.000</div>
                         <div class="product-rating">
                             <i class="fas fa-star"></i>
@@ -953,7 +953,7 @@
                             <i class="fas fa-star"></i>
                             <i class="far fa-star"></i>
                         </div>
-                        <button class="btn-add-to-cart" data-id="3" data-name="Weekly Planner Floral" data-price="150000" data-img="https://images.unsplash.com/photo-1589561454227-60d6c9d5cfd6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80">
+                        <button class="btn-add-to-cart" data-id="3" data-name="Washi Tape" data-price="150000" data-img="/images/washi tape.jpg">
                             <i class="fas fa-cart-plus"></i> Tambah ke Keranjang
                         </button>
                     </div>
